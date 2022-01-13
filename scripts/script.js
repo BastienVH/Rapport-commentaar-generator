@@ -18,7 +18,7 @@ let gradeTheory = prompt("Percentage voor theorie:");
 gradeTotal = (Number(gradeEarRhythm) + Number(gradeEarMelodic) + Number(gradeSinging) + Number(gradeTheory))/4;
 
 // Create Rapport Card comment
-commentPara.innerHTML = `Dit is een ... rapport, ${studentName}`;
+commentPara.innerHTML = `Dit is een jouw rapport, ${studentName}`;
 
 // Insert rapport card comment into web page
 displayTotal.innerHTML = `${gradeTotal} %`;
