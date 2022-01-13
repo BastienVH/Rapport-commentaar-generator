@@ -15,7 +15,7 @@ let gradeSinging = prompt("Percentage voor zang:");
 let gradeTheory = prompt("Percentage voor theorie:");
 
 // Compute student total
-gradeTotal = (Number(gradeEarRhythm) + Number(gradeEarMelodic) + Number(gradeSinging) + Number(gradeTheory))/4;
+gradeTotal = (Number(gradeEarRhythm) + Number(gradeEarMelodic))/8 + Number(gradeSinging)/2 + Number(gradeTheory)/4;
 
 // Rate the rapport card
 let ratingTotal;
