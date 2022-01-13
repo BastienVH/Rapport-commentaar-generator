@@ -1,5 +1,6 @@
 // Get the student name
-let studentName = prompt("Naam van de leerling:", '');
+let studentName = document.getElementById("name");
+studentName.innerText = prompt("Naam van de leerling:", '');
 
 // Get all grades
 let gradeEarRhythm = prompt("Percentage voor ritmisch dictee:");
