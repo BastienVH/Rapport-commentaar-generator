@@ -17,8 +17,26 @@ let gradeTheory = prompt("Percentage voor theorie:");
 // Compute student total
 gradeTotal = (Number(gradeEarRhythm) + Number(gradeEarMelodic) + Number(gradeSinging) + Number(gradeTheory))/4;
 
+// Rate the rapport card
+let ratingTotal;
+switch (true) {
+  case (gradeTotal >= 90):
+    ratingTotal = "een fantastisch rapport";
+    break;
+  case (gradeTotal >= 80):
+    ratingTotal = "een zeer goed rapport";
+    break;
+  case (gradeTotal >= 70):
+    ratingTotal = "een goed rapport";
+    break;
+  case (gradeTotal >= 60):
+    ratingTotal = "een degelijk rapport";
+    break;
+  case (gradeTotal < 60):
+    ratingTotal = "geen goed rapport"
+}
 // Create Rapport Card comment
-commentPara.innerHTML = `Dit is een jouw rapport, ${studentName}`;
+commentPara.innerHTML = `Dit is ${ratingTotal}, ${studentName}.`;
 
 // Insert rapport card comment into web page
 displayTotal.innerHTML = `${gradeTotal} %`;
