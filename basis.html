@@ -8,9 +8,32 @@
 </head>
 <body>
   <h1>Rapportcommentaar generator</h1>
-  <h2>Naam van de leerling: <span id="name"></span></h2>
+  <label for="name">Naam van de leerling:</label>
+  <input type="text" id="name">
   <hr>
-  <p id="commentaartekst"></p>
+  <p>Rekenen</p>
+  <input type="radio" name="rekenen" id="zeergoed"><label for="zeergoed">zeer goed</label>
+  <input type="radio" name="rekenen" id="goed"><label for="goed">goed</label>
+  <input type="radio" name="rekenen" id="zwak"><label for="zwak">zwak</label>
+  <hr>
+  <p>Begrijpend lezen</p>
+  <input type="radio" name="begrijpendLezen" id="zeergoed"><label for="zeergoed">zeer goed</label>
+  <input type="radio" name="begrijpendLezen" id="goed"><label for="goed">goed</label>
+  <input type="radio" name="begrijpendLezen" id="zwak"><label for="zwak">zwak</label>
+  <hr>
+  <p>Spelling</p>
+  <input type="radio" name="spelling" id="zeergoed"><label for="zeergoed">zeer goed</label>
+  <input type="radio" name="spelling" id="goed"><label for="goed">goed</label>
+  <input type="radio" name="spelling" id="zwak"><label for="zwak">zwak</label>
+  <hr>
+  <p>Muzische vorming</p>
+  <input type="radio" name="muVo" id="zeergoed"><label for="zeergoed">zeer goed</label>
+  <input type="radio" name="muVo" id="goed"><label for="goed">goed</label>
+  <input type="radio" name="muVo" id="zwak"><label for="zwak">zwak</label>
+  <hr>
+  <label for="commentaartekst">Rapportcommentaar</label>
+  <br>
+  <textarea name="commentaartekst" id="commentaartekst" cols="60" rows="10"></textarea>
 </body>
 <script src="scripts/basis.js"></script>
 </html>
