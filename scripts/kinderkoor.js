@@ -48,6 +48,19 @@ for (const aanwezigheidRadioButton in aanwezigheidRadioButtons) {
   }
 }
 
+// Draft for function for above functionality
+
+function returnSelectedRadio(btnSelector) {
+  const radioButtons = document.querySelectorAll(`input[name=${btnSelector}]`);
+  let selectedButton;
+  for (const radioButton in radioButtons) {
+    if (radioButton.checked) {
+      selectedButton = radioButton.value;
+      console.log(selectedButton);
+    }
+  }
+}
+
 
 // Get the student name
 // const studentName = prompt("Naam van de leerling:", '')
