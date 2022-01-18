@@ -2,6 +2,7 @@
 const displayName = document.getElementById("name");
 const displayTotal = document.getElementById("total");
 const commentPara = document.getElementById("commentaartekst");
+const gender = returnSelection('gender');
 
 let result = "";
 
