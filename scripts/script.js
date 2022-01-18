@@ -4,15 +4,15 @@ const displayTotal = document.getElementById("total");
 const commentPara = document.getElementById("commentaartekst");
 
 // Get the student name
-const studentName = prompt("Naam van de leerling:", '')
+// const studentName = prompt("Naam van de leerling:", '')
 displayName.innerText = studentName;
 displayTotal.innerHTML = '';
 
-// Get all grades
-let gradeEarRhythm = prompt("Percentage voor ritmisch dictee:");
-let gradeEarMelodic = prompt("Percentage voor melodisch dictee:");
-let gradeSinging = prompt("Percentage voor zang:");
-let gradeTheory = prompt("Percentage voor theorie:");
+// // Get all grades
+// let gradeEarRhythm = prompt("Percentage voor ritmisch dictee:");
+// let gradeEarMelodic = prompt("Percentage voor melodisch dictee:");
+// let gradeSinging = prompt("Percentage voor zang:");
+// let gradeTheory = prompt("Percentage voor theorie:");
 
 // Compute student total
 gradeTotal = (Number(gradeEarRhythm) + Number(gradeEarMelodic))/8 + Number(gradeSinging)/2 + Number(gradeTheory)/4;
