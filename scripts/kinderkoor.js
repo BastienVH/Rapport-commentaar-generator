@@ -12,7 +12,7 @@ const tekstRadioButtons = document.querySelectorAll('input[name="tekstenkennen"]
 let selectedTekst
 for (const tekstRadioButton in tekstRadioButtons) {
   if (tekstRadioButton.checked) {
-    selectedTekst = tekstRadioButton.value;
+    selectedTekst = tekstRadioButton.id;
     console.log(selectedTekst);
   }
 }
@@ -23,7 +23,7 @@ const stemRadioButtons = document.querySelectorAll('input[name="stemgebruik"]');
 let selectedStem
 for (const stemRadioButton in stemRadioButtons) {
   if (stemRadioButton.checked) {
-    selectedStem = stemRadioButton.value;
+    selectedStem = stemRadioButton.id;
     console.log(selectedStem);
   }
 }
@@ -33,7 +33,7 @@ const meedoenRadioButtons = document.querySelectorAll('input[name="goedmeedoen"]
 let selectedMeedoen
 for (const meedoenRadioButton in meedoenRadioButtons) {
   if (meedoenRadioButton.checked) {
-    selectedMeedoen = meedoenRadioButton.value;
+    selectedMeedoen = meedoenRadioButton.id;
     console.log(selectedMeedoen);
   }
 }
@@ -43,7 +43,7 @@ const aanwezigheidRadioButtons = document.querySelectorAll('input[name="aanwezig
 let selectedAanwezigheid
 for (const aanwezigheidRadioButton in aanwezigheidRadioButtons) {
   if (aanwezigheidRadioButton.checked) {
-    selectedAanwezigheid = aanwezigheidRadioButton.value;
+    selectedAanwezigheid = aanwezigheidRadioButton.id;
     console.log(selectedAanwezigheid);
   }
 }
@@ -51,14 +51,9 @@ for (const aanwezigheidRadioButton in aanwezigheidRadioButtons) {
 // Draft for function for above functionality
 
 function returnSelectedRadio(btnSelector) {
-  const radioButtons = document.querySelectorAll(`input[name=${btnSelector}]`);
-  let selectedButton;
-  for (const radioButton in radioButtons) {
-    if (radioButton.checked) {
-      selectedButton = radioButton.value;
-      console.log(selectedButton);
-    }
-  }
+  const radioButtons = document.querySelector(`input[name="${btnSelector}"]:checked`);
+  console.log(radioButtons.id);
+  return document.querySelector(`input[name="${btnSelector}"]:checked`.id);
 }
 
 
