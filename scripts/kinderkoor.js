@@ -60,9 +60,10 @@ switch (fbAanwezigheid) {
   if (gender === "meisje") {
     result = `${displayName.value}, je bent een fijn ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
   } else {
-    result = `${displayName.value}, je bent een fijne ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
+    result = `${displayName.value}, je bent een toffe ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
   }
   console.log(result);
+  commentPara.innerHTML = result;
 }
 
 function returnSelection(btnSelector) {
