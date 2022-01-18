@@ -1,6 +1,7 @@
 html {
   display: flex;
   justify-content: center;
+  background-color: rgb(248, 246, 246);
 }
 
 h1 {
@@ -9,8 +10,15 @@ h1 {
 
 nav {
   display: flex;
-  justify-content: space-between;
-  margin: 8px;
+  justify-content: center;
+  margin: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
@@ -22,9 +30,4 @@ nav ul li a {
 
 .active {
   background-color: red;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
 }
