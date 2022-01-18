@@ -5,50 +5,14 @@ const commentPara = document.getElementById("commentaartekst");
 
 let result = "";
 
-// IMPROVEMENT: create a function which allows the selection of the radiobuttons and returns the value of selected button
-
-// Store result for tekstenkennen
-const tekstRadioButtons = document.querySelectorAll('input[name="tekstenkennen"]');
-let selectedTekst
-for (const tekstRadioButton in tekstRadioButtons) {
-  if (tekstRadioButton.checked) {
-    selectedTekst = tekstRadioButton.id;
-    console.log(selectedTekst);
-  }
+function generateFeedback() {
+  const fbTekst = returnSelection('tekstenkennen');
+  const fbStemgebruik = returnSelection('stemgebruik');
+  const fbMeedoen = returnSelection('goedmeedoen');
+  const fbAanwezigheid = returnSelection('aanwezigheid');
+  // Log to console to test returned values
+  console.log(`Teksten kennen: ${fbTekst}\n Stemgebruik: ${fbStemgebruik}\n Meedoen: ${fbMeedoen}\n Aanwezigheid: ${fbAanwezigheid}`);
 }
-
-
-// Store result for stemgebruik
-const stemRadioButtons = document.querySelectorAll('input[name="stemgebruik"]');
-let selectedStem
-for (const stemRadioButton in stemRadioButtons) {
-  if (stemRadioButton.checked) {
-    selectedStem = stemRadioButton.id;
-    console.log(selectedStem);
-  }
-}
-
-// Store result for goedmeedoen
-const meedoenRadioButtons = document.querySelectorAll('input[name="goedmeedoen"]');
-let selectedMeedoen
-for (const meedoenRadioButton in meedoenRadioButtons) {
-  if (meedoenRadioButton.checked) {
-    selectedMeedoen = meedoenRadioButton.id;
-    console.log(selectedMeedoen);
-  }
-}
-
-// Store result for aanwezigheid
-const aanwezigheidRadioButtons = document.querySelectorAll('input[name="aanwezigheid"]');
-let selectedAanwezigheid
-for (const aanwezigheidRadioButton in aanwezigheidRadioButtons) {
-  if (aanwezigheidRadioButton.checked) {
-    selectedAanwezigheid = aanwezigheidRadioButton.id;
-    console.log(selectedAanwezigheid);
-  }
-}
-
-// Draft for function for above functionality
 
 function returnSelection(btnSelector) {
   return document.querySelector(`input[name="${btnSelector}"]:checked`.id);
