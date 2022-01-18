@@ -56,6 +56,14 @@ function returnSelectedRadio(btnSelector) {
   return document.querySelector(`input[name="${btnSelector}"]:checked`.id);
 }
 
+// Expected result example:
+// Jente, je bent een fijne meid. Je kent de teksten van de liedjes al heel goed!
+// Je kan je stem al goed gebruiken en zingt mooi op toon.
+// Je bent vaak aanwezig en doet goed mee. Fijn zo!
+
+/* Draft for result code:
+result = `${name}, je bent een fijne ${gender}.\n${tekstengekend}\n${stemgebruik}\n${aanwezigheid}`
+*/
 
 // Get the student name
 // const studentName = prompt("Naam van de leerling:", '')
