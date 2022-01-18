@@ -2,7 +2,6 @@
 const displayName = document.getElementById("name");
 const displayTotal = document.getElementById("total");
 const commentPara = document.getElementById("commentaartekst");
-
 let result = "";
 
 function generateFeedback() {
@@ -24,57 +23,52 @@ function generateFeedback() {
     fbTekstFull = 'Je hebt soms nog moeite met de teksten van de liedjes.'
   }
 
-// Create full text result for fbStemgebruik
-let fbStemFull = "";
-switch (fbStemgebruik) {
-  case "zeergoed":
-    fbStemFull = "Je kan je stem al goed gebruiken en zingt mooi op toon.";
-    break;
-  case "goed":
-    fbStemFull = "Zingen op toon begint al goed te lukken. Let op de tips die ik geef over zingen op een goede manier.";
-    break;
-  default:
-    fbStemFull = "Luister goed naar de piano en de andere kinderen tijdens het zingen. Zoek actief naar de goede toonhoogte en let op de tips die ik geef.";
-}
-
-let fbMeedoenFull = "";
-if (fbMeedoen === 'zeergoed') {
-  fbMeedoenFull = 'Je doet altijd goed mee tijdens de lessen.';
-} else if (fbMeedoen === 'goed') {
-  fbMeedoenFull = 'Je doet meestal goed mee tijdens de lessen.'
-} else {
-  fbMeedoenFull = 'Je bent af en toe afgeleid tijdens de lessen.'
-}
-
-let fbAanwezigheidFull = "";
-switch (fbAanwezigheid) {
-  case "zeergoed":
-    fbAanwezigheidFull = "Je bent vaak aanwezig en doet goed mee. Fijn zo!";
-    break;
-  case "goed":
-    fbAanwezigheidFull = "Je bent meestal aanwezig tijdens de koorlessen.";
-    break;
-  default:
-    fbAanwezigheidFull = "Je bent af en toe afwezig tijdens de koorlessen. Dat is spijtig, want zo mis je wel wat van de liedjes die we leren.";
+  // Create full text result for fbStemgebruik
+  let fbStemFull = "";
+  switch (fbStemgebruik) {
+    case "zeergoed":
+      fbStemFull = "Je kan je stem al goed gebruiken en zingt mooi op toon.";
+      break;
+    case "goed":
+      fbStemFull = "Zingen op toon begint al goed te lukken. Let op de tips die ik geef over zingen op een goede manier.";
+      break;
+    default:
+      fbStemFull = "Luister goed naar de piano en de andere kinderen tijdens het zingen. Zoek actief naar de goede toonhoogte en let op de tips die ik geef.";
   }
-  if (gender === "meisje") {
-    result = `${displayName.value}, je bent een fijn ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
+
+  // Create full text result for fbMeedoen
+  let fbMeedoenFull = "";
+  if (fbMeedoen === 'zeergoed') {
+    fbMeedoenFull = 'Je doet altijd goed mee tijdens de lessen.';
+  } else if (fbMeedoen === 'goed') {
+    fbMeedoenFull = 'Je doet meestal goed mee tijdens de lessen.'
   } else {
-    result = `${displayName.value}, je bent een toffe ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
+    fbMeedoenFull = 'Je bent af en toe afgeleid tijdens de lessen.'
   }
-  console.log(result);
-  commentPara.innerHTML = result;
+
+  // Create full text result for fbAanwezigheid
+  let fbAanwezigheidFull = "";
+  switch (fbAanwezigheid) {
+    case "zeergoed":
+      fbAanwezigheidFull = "Je bent vaak aanwezig en doet goed mee. Fijn zo!";
+      break;
+    case "goed":
+      fbAanwezigheidFull = "Je bent meestal aanwezig tijdens de koorlessen.";
+      break;
+    default:
+      fbAanwezigheidFull = "Je bent af en toe afwezig tijdens de koorlessen. Dat is spijtig, want zo mis je wel wat van de liedjes die we leren.";
+    }
+
+  // Generate combined full text result
+    if (gender === "meisje") {
+      result = `${displayName.value}, je bent een fijn ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
+    } else {
+      result = `${displayName.value}, je bent een toffe ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
+    }
+  // Output result to webpage
+    commentPara.innerHTML = result;
 }
 
 function returnSelection(btnSelector) {
   return document.querySelector(`input[name="${btnSelector}"]:checked`).id;
 }
-
-// Expected result example:
-// Jente, je bent een fijne meid. Je kent de teksten van de liedjes al heel goed!
-// Je kan je stem al goed gebruiken en zingt mooi op toon.
-// Je bent vaak aanwezig en doet goed mee. Fijn zo!
-
-/* Draft for result code:
-result = `${name}, je bent een fijne ${gender}.\n${tekstengekend}\n${stemgebruik}\n${aanwezigheid}`
-*/
