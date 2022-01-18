@@ -50,9 +50,7 @@ for (const aanwezigheidRadioButton in aanwezigheidRadioButtons) {
 
 // Draft for function for above functionality
 
-function returnSelectedRadio(btnSelector) {
-  const radioButtons = document.querySelector(`input[name="${btnSelector}"]:checked`);
-  console.log(radioButtons.id);
+function returnSelection(btnSelector) {
   return document.querySelector(`input[name="${btnSelector}"]:checked`.id);
 }
 
