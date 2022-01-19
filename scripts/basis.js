@@ -6,13 +6,16 @@ const eigenTekst = document.getElementById("eigenTxt");
 
 
 function generateBasisFeedback() {
+  // Get selected values from the form
   const gender = returnSelection('gender');
   const displayName = document.getElementById("name");
   const beschrijving1 = selectBeschr1.value;
   const beschrijving2 = selectBeschr2.value;
   const eigenTekstje = eigenTekst.value;
   const samenwerken = returnSelection("samenwerken");
+  // Combine selected values to create a temporary string to output
   result = displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
+  // Check if something has been entered for eigenTekstje
   if (eigenTekstje) {
     result += eigenTekstje +"\n";
   }
