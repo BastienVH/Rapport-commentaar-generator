@@ -65,7 +65,7 @@ function generateFeedback() {
 
   // Generate combined full text result
     if (gender === "meisje") {
-      result = `${displayName.value}, je bent een fijn ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
+      result = `${displayName.value}, je bent een fijne meid.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
     } else {
       result = `${displayName.value}, je bent een toffe ${gender}.\n${fbTekstFull}\n${fbMeedoenFull}\n${fbStemFull}\n${fbAanwezigheidFull}`;
     }
