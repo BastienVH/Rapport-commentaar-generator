@@ -36,8 +36,8 @@
     <option value="rustige">rustige</option>
   </select>
   <p>Geslacht</p>
-  <input type="radio" name="gender" id="jongen"><label for="jongen">jongen</label>
-  <input type="radio" name="gender" id="meisje"><label for="meisje">meisje</label>
+  <input type="radio" name="gender" id="jongen" value="jongen"><label for="jongen">jongen</label>
+  <input type="radio" name="gender" id="meisje" value="meid"><label for="meisje">meisje</label>
   <hr>
   <div id="containerEigenTxt">
     <label for="eigenTxt">Eigen tekstje</label>
@@ -51,6 +51,12 @@
     <input type="radio" name="samenwerken" id="samenwerken_ms" value="moeilijk_spelen"><label for="samenwerken_ms">moeilijk - spelen</label>
     <input type="radio" name="samenwerken" id="samenwerken_gem" value="gemiddeld"><label for="samenwerken_gem">gemiddeld</label>
     <input type="radio" name="samenwerken" id="samenwerken_g" value="goed"><label for="samenwerken_g">goed</label>
+  </div>
+  <div>
+    <h2>Individueel</h2>
+    <input type="radio" name="individueel" id="individueel_moei" value="moeilijk"><label for="individueel_moei">moeilijk</label>
+    <input type="radio" name="individueel" id="individueel_gem" value="gemiddeld"><label for="individueel_gem">gemiddeld</label>
+    <input type="radio" name="individueel" id="individueel_g" value="goed"><label for="individueel_goed">goed</label>
   </div>
   <hr>
   <button type="submit" id="generateButton">Genereer commentaar</button>
