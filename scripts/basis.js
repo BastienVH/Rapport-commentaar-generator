@@ -10,7 +10,9 @@ function generateBasisFeedback() {
   const beschrijving1 = selectBeschr1.value;
   const beschrijving2 = selectBeschr2.value;
   result = displayName.value + " " + gender + " " + beschrijving1 + " " + beschrijving2;
-  console.log(result);
+
+  // Output result to webpage
+  commentPara.innerHTML = result;
 }
 
 function returnSelection(btnSelector) {
