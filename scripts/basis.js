@@ -68,9 +68,7 @@ const dictKlassikaal = {
   if (eigenTekstje) {
     result += eigenTekstje +"\n";
   }
-  result += dictSamenwerken[samenwerken] + "\n";
-  result += dictIndividueel[individueel] + "\n";
-  result += dictUitleg[uitleg] + "\n";
+  result += dictSamenwerken[samenwerken] + "\n" + dictIndividueel[individueel] + "\n" + dictUitleg[uitleg] + "\n";
 
   // Output result to webpage
   commentPara.innerHTML = result;
