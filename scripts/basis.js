@@ -24,6 +24,7 @@ function generateBasisFeedback() {
   let samenwerken = returnSelection("samenwerken");
   let individueel = returnSelection("individueel")
   let uitleg = returnSelection("uitleg");
+  let klassikaal = returnSelection("klassikaal");
 
   if (gender === 'jongen') {
     aanwijzendVnw = "hij";
@@ -46,21 +47,21 @@ const dictSamenwerken = {
   goed : `${aanwijzendVnwCap} kan goed in een groep samenwerken. ${aanwijzendVnwCap} zorgt ervoor dat er geen ruzie ontstaat en komt tegelijkertijd ook op voor ${bezittVnw} eigen mening. Knap!`
 }
 const dictIndividueel = {
-  moeilijk : `Tijdens zelfstandig werk raakt ${displayName.value} makkelijk afgeleid. Dan begint ${aanwijzendVnw} te praten met de leerlingen die bij ${lijdVnw} in de buurt zitten.  `,
+  moeilijk : `Tijdens zelfstandig werk raakt ${displayName.value} makkelijk afgeleid. Dan begint ${aanwijzendVnw} te praten met de leerlingen die bij ${lijdVnw} in de buurt zitten. `,
   gemiddeld : `${displayName.value} kan op sommige momenten heel flink zelfstandig werken. Op andere dagen lukt het minder goed. Dan wil ${aanwijzendVnw} liever babbelen met ${bezittVnw} buurtje.`,
-  goed : `Bij zelfstandig werken doet ${displayName.value} goed  ${bezittVnw} best. ${aanwijzendVnwCap} werkt rustig en flink aan  ${bezittVnw} oefeningen.`
+  goed : `Bij zelfstandig werken doet ${displayName.value} goed ${bezittVnw} best. ${aanwijzendVnwCap} werkt rustig en flink aan ${bezittVnw} oefeningen.`
 }
 
 const dictUitleg = {
-  moeilijk : `${aanwijzendVnwCap} komt zelden uit zichzelf extra uitleg vragen wanneer iets moeilijk gaat. Nochtans help ik ${lijdVnw} met plezier.  `,
+  moeilijk : `${aanwijzendVnwCap} komt zelden uit zichzelf extra uitleg vragen wanneer iets moeilijk gaat. Nochtans help ik ${lijdVnw} met plezier. `,
   gemiddeld : `${aanwijzendVnwCap} vraagt soms extra uitleg wanneer ${aanwijzendVnw} iets niet begrijpt. Dat mag ${aanwijzendVnw} nog vaker doen.`,
   goed : `${aanwijzendVnwCap} komt uitleg vragen wanneer ${aanwijzendVnw} iets niet begrijpt. Dat is een goede leerhouding!)`
 }
 
 const dictKlassikaal = {
-  gemiddeld_spelen : `${aanwijzendVnwCap} wil graag opletten in de klas, maar wil ook graag plezier maken met ${bezittVnw} klasgenoten. ${aanwijzendVnwCap} moet goed onthouden dat je speelt op de speelplaats en werkt in de klas. Er zijn meer en meer momenten waarop (naam) goed meewerkt. Toch moet ik ${lijdVnw} regelmatig weer bij de les houden.`,
-  gemiddeld_dromen : `Tijdens klassikaal werk doet (naam)  ${bezittVnw} best, maar  ${bezittVnw} gedachten durven wel eens af te dwalen. ${aanwijzendVnwCap} heeft alle uitleg nochtans echt nodig.`,
-  goed : `Tijdens klassikaal werk denkt ${aanwijzendVnw} goed mee na en steekt ${aanwijzendVnw} enthousiast  ${bezittVnw} vinger op.`
+  gemiddeld_spelen : `${aanwijzendVnwCap} wil graag opletten in de klas, maar wil ook graag plezier maken met ${bezittVnw} klasgenoten. ${aanwijzendVnwCap} moet goed onthouden dat je speelt op de speelplaats en werkt in de klas. Er zijn meer en meer momenten waarop ${displayName.value} goed meewerkt. Toch moet ik ${lijdVnw} regelmatig weer bij de les houden.`,
+  gemiddeld_dromen : `Tijdens klassikaal werk doet ${displayName.value} ${bezittVnw} best, maar ${bezittVnw} gedachten durven wel eens af te dwalen. ${aanwijzendVnwCap} heeft alle uitleg nochtans echt nodig.`,
+  goed : `Tijdens klassikaal werk denkt ${aanwijzendVnw} goed mee na en steekt ${aanwijzendVnw} enthousiast ${bezittVnw} vinger op.`
 }
   // Combine selected values to create a temporary string to output
   result = displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
@@ -68,7 +69,7 @@ const dictKlassikaal = {
   if (eigenTekstje) {
     result += eigenTekstje +"\n";
   }
-  result += dictSamenwerken[samenwerken] + "\n" + dictIndividueel[individueel] + "\n" + dictUitleg[uitleg] + "\n";
+  result += dictSamenwerken[samenwerken] + "\n" + dictIndividueel[individueel] + "\n" + dictUitleg[uitleg] + "\n" + dictKlassikaal[klassikaal] + "\n";
 
   // Output result to webpage
   commentPara.innerHTML = result;
