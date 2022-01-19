@@ -4,6 +4,10 @@ const displayTotal = document.getElementById("total");
 const commentPara = document.getElementById("commentaartekst");
 let result = "";
 
+const generateBtn = document.getElementById("generateButton");
+
+generateBtn.addEventListener("click", generateFeedback);
+
 function generateFeedback() {
   const gender = returnSelection('gender');
   const fbTekst = returnSelection("tekstenkennen");
