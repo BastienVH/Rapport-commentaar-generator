@@ -4,6 +4,10 @@ const selectBeschr1 = document.getElementById("beschrijving1");
 const selectBeschr2 = document.getElementById("beschrijving2");
 const eigenTekst = document.getElementById("eigenTxt");
 
+// code for generate button
+const generateBtn = document.getElementById("generateButton");
+generateBtn.addEventListener("click", generateBasisFeedback);
+
 
 function generateBasisFeedback() {
   // Get selected values from the form
