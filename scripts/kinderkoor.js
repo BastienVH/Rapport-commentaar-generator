@@ -74,5 +74,5 @@ function generateFeedback() {
 }
 
 function returnSelection(btnSelector) {
-  return document.querySelector(`input[name="${btnSelector}"]:checked`).id;
+  return document.querySelector(`input[name="${btnSelector}"]:checked`).value;
 }
