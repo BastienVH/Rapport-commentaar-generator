@@ -31,3 +31,11 @@ nav ul li a {
 .active {
   background-color: red;
 }
+
+#containerEigenTxt {
+  display: flex;
+}
+
+#eigenTxt {
+  flex: 1;
+}
