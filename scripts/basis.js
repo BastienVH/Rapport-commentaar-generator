@@ -56,6 +56,12 @@ const dictUitleg = {
   gemiddeld : `${aanwijzendVnwCap} vraagt soms extra uitleg wanneer ${aanwijzendVnw} iets niet begrijpt. Dat mag ${aanwijzendVnw} nog vaker doen.`,
   goed : `${aanwijzendVnwCap} komt uitleg vragen wanneer ${aanwijzendVnw} iets niet begrijpt. Dat is een goede leerhouding!)`
 }
+
+const dictKlassikaal = {
+  gemiddeld_spelen : `${aanwijzendVnwCap} wil graag opletten in de klas, maar wil ook graag plezier maken met ${bezittVnw} klasgenoten. ${aanwijzendVnwCap} moet goed onthouden dat je speelt op de speelplaats en werkt in de klas. Er zijn meer en meer momenten waarop (naam) goed meewerkt. Toch moet ik ${lijdVnw} regelmatig weer bij de les houden.`,
+  gemiddeld_dromen : `Tijdens klassikaal werk doet (naam)  ${bezittVnw} best, maar  ${bezittVnw} gedachten durven wel eens af te dwalen. ${aanwijzendVnwCap} heeft alle uitleg nochtans echt nodig.`,
+  goed : `Tijdens klassikaal werk denkt ${aanwijzendVnw} goed mee na en steekt ${aanwijzendVnw} enthousiast  ${bezittVnw} vinger op.`
+}
   // Combine selected values to create a temporary string to output
   result = displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
   // Check if something has been entered for eigenTekstje
