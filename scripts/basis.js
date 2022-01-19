@@ -22,6 +22,8 @@ function generateBasisFeedback() {
   let beschrijving2 = selectBeschr2.value;
   let eigenTekstje = eigenTekst.value;
   let samenwerken = returnSelection("samenwerken");
+  let individueel = returnSelection("individueel")
+  let uitleg = returnSelection("uitleg");
 
   if (gender === 'jongen') {
     aanwijzendVnw = "hij";
@@ -44,16 +46,16 @@ const dictSamenwerken = {
   goed : `${aanwijzendVnwCap} kan goed in een groep samenwerken. ${aanwijzendVnwCap} zorgt ervoor dat er geen ruzie ontstaat en komt tegelijkertijd ook op voor ${bezittVnw} eigen mening. Knap!`
 }
 const dictIndividueel = {
-  moeilijk : `Tijdens zelfstandig werk raakt (naam) makkelijk afgeleid. Dan begint (hij) te praten met de leerlingen die bij (hem) in de buurt zitten.  `,
-  gemiddeld : `(naam) kan op sommige momenten heel flink zelfstandig werken. Op andere dagen lukt het minder goed. Dan wil (hij) liever babbelen met (zijn) buurtje.`,
-  goed : `Bij zelfstandig werken doet (naam) goed  (zijn) best. (Hij) werkt rustig en flink aan  (zijn) oefeningen.`
+  moeilijk : `Tijdens zelfstandig werk raakt ${displayName.value} makkelijk afgeleid. Dan begint ${aanwijzendVnw} te praten met de leerlingen die bij ${lijdVnw} in de buurt zitten.  `,
+  gemiddeld : `${displayName.value} kan op sommige momenten heel flink zelfstandig werken. Op andere dagen lukt het minder goed. Dan wil ${aanwijzendVnw} liever babbelen met ${bezittVnw} buurtje.`,
+  goed : `Bij zelfstandig werken doet ${displayName.value} goed  ${bezittVnw} best. ${aanwijzendVnwCap} werkt rustig en flink aan  ${bezittVnw} oefeningen.`
 }
 
-// const dictUitleg = {
-//   moeilijk : ``,
-//   gemiddeld : ``,
-//   goed : ``
-// }
+const dictUitleg = {
+  moeilijk : `${aanwijzendVnwCap} komt zelden uit zichzelf extra uitleg vragen wanneer iets moeilijk gaat. Nochtans help ik ${lijdVnw} met plezier.  `,
+  gemiddeld : `${aanwijzendVnwCap} vraagt soms extra uitleg wanneer ${aanwijzendVnw} iets niet begrijpt. Dat mag ${aanwijzendVnw} nog vaker doen.`,
+  goed : `${aanwijzendVnwCap} komt uitleg vragen wanneer ${aanwijzendVnw} iets niet begrijpt. Dat is een goede leerhouding!)`
+}
   // Combine selected values to create a temporary string to output
   result = displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
   // Check if something has been entered for eigenTekstje
@@ -61,6 +63,8 @@ const dictIndividueel = {
     result += eigenTekstje +"\n";
   }
   result += dictSamenwerken[samenwerken] + "\n";
+  result += dictIndividueel[individueel] + "\n";
+  result += dictUitleg[uitleg] + "\n";
 
   // Output result to webpage
   commentPara.innerHTML = result;
