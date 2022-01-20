@@ -67,14 +67,14 @@ const dictKlassikaal = {
   goed : `Tijdens klassikaal werk denkt ${aanwijzendVnw} goed mee na en steekt ${aanwijzendVnw} enthousiast ${bezittVnw} vinger op.`
 }
 const dictKlGroepje = {
-  goed : ``,
-  niet_goed : ``,
+  goed : `(naam) krijgt regelmatig extra uitleg in een klein groepje. Dan doet (hij) goed mee.`,
+  niet_goed : `(naam) krijgt regelmatig extra uitleg in een klein groepje. Dat doen we om (hem) zo veel mogelijk te helpen. Jammer genoeg doet (naam) niet elke keer goed mee. (Hij) heeft nochtans echt nood aan die extra begeleiding.`,
   nvt : ""
 }
 
 const dictHelpen = {
-  juf : ``,
-  klasgenoten : ``,
+  juf : `Als er tijd is om de juf te helpen, doet (naam) dat met plezier. (hij) is erg behulpzaam.`,
+  klasgenoten : `(naam) helpt graag klasgenoten als daar tijd voor is. (hij) is een goede helper.`,
   nvt : ``
 }
 
