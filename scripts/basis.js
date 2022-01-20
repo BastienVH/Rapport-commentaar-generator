@@ -25,6 +25,8 @@ function generateBasisFeedback() {
   let individueel = returnSelection("individueel")
   let uitleg = returnSelection("uitleg");
   let klassikaal = returnSelection("klassikaal");
+  let klGroepje = returnSelection("klgroepje");
+  let helpen = returnSelection("helpen");
 
   if (gender === 'jongen') {
     aanwijzendVnw = "hij";
@@ -46,6 +48,7 @@ const dictSamenwerken = {
   gemiddeld : `In een groepje met zelfgekozen klasgenoten kan ${displayName.value} goed samenwerken.`,
   goed : `${aanwijzendVnwCap} kan goed in een groep samenwerken. ${aanwijzendVnwCap} zorgt ervoor dat er geen ruzie ontstaat en komt tegelijkertijd ook op voor ${bezittVnw} eigen mening. Knap!`
 }
+
 const dictIndividueel = {
   moeilijk : `Tijdens zelfstandig werk raakt ${displayName.value} makkelijk afgeleid. Dan begint ${aanwijzendVnw} te praten met de leerlingen die bij ${lijdVnw} in de buurt zitten. `,
   gemiddeld : `${displayName.value} kan op sommige momenten heel flink zelfstandig werken. Op andere dagen lukt het minder goed. Dan wil ${aanwijzendVnw} liever babbelen met ${bezittVnw} buurtje.`,
@@ -63,13 +66,38 @@ const dictKlassikaal = {
   gemiddeld_dromen : `Tijdens klassikaal werk doet ${displayName.value} ${bezittVnw} best, maar ${bezittVnw} gedachten durven wel eens af te dwalen. ${aanwijzendVnwCap} heeft alle uitleg nochtans echt nodig.`,
   goed : `Tijdens klassikaal werk denkt ${aanwijzendVnw} goed mee na en steekt ${aanwijzendVnw} enthousiast ${bezittVnw} vinger op.`
 }
+const dictKlGroepje = {
+  goed : ``,
+  niet_goed : ``
+  nvt : ""
+}
+
+const dictHelpen = {
+  juf : ``,
+  klasgenoten : ``,
+  nvt : ``
+}
+
+const dictSchrijven = {
+  slordig : ``,
+  moeilijk : ``,
+  wisselend : ``,
+  mooi : ``,
+  nvt : ``,
+}
+
+const dictBank = {
+  slordig : ``,
+  nvt : ``
+}
+
   // Combine selected values to create a temporary string to output
   result = displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
   // Check if something has been entered for eigenTekstje
   if (eigenTekstje) {
     result += eigenTekstje +"\n";
   }
-  result += dictSamenwerken[samenwerken] + "\n" + dictIndividueel[individueel] + "\n" + dictUitleg[uitleg] + "\n" + dictKlassikaal[klassikaal] + "\n";
+  result += dictSamenwerken[samenwerken] + "\n" + dictIndividueel[individueel] + "\n" + dictUitleg[uitleg] + "\n" + dictKlassikaal[klassikaal] + "\n" + dictKlGroepje[klGroepje] + "\n" + dictHelpen[helpen];
 
   // Output result to webpage
   commentPara.innerHTML = result;
