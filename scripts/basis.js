@@ -30,16 +30,24 @@ function generateBasisFeedback() {
   let schrijven = returnSelection("schrijven");
   let bank = returnSelection("bank");
   let punten = returnSelection("punten");
+  //This should return an array of values
+  let werkpunten = returnSelection("werkpunten");
+  let avi = returnSelection("avi");
+  let tafels = returnSelection("tafels");
+  let voorlezen = returnSelection("voorlezen");
+  let slot = returnSelection("slot");
 
   if (gender === 'jongen') {
     aanwijzendVnw = "hij";
     aanwijzendVnwCap = "Hij";
     bezittVnw = "zijn";
+    bezittVnwCap = "Zijn";
     lijdVnw = "hem";
   } else {
     aanwijzendVnw = "ze";
     aanwijzendVnwCap = "Ze";
     bezittVnw = "haar";
+    bezittVnwCap = "Haar";
     lijdVnw = "haar";
   }
 
@@ -101,18 +109,54 @@ const dictPunten = {
   schitterend : `Het rapport van ${displayName.value} staat weer vol schitterende resultaten, zoals voor lezen / luisteren / taalsystematiek / getallenkennis en bewerkingen / meten en metend rekenen / wereldoriëntatie / godsdienst en idem . Hier mag ${aanwijzendVnw} erg trots op zijn.\n`
 }
 
+const dictWerkpunten = {
+  inzet : `Ik denk dat ${displayName.value} thuis nog iets meer moet werken voor school.`,
+  beetje : `De komende periode kan ${aanwijzendVnw} nog wat extra aandacht schenken aan lezen / luisteren / taalsystematiek / getallenkennis en bewerkingen / meten en metend rekenen / wereldoriëntatie / godsdienst en lezen / luisteren / taalsystematiek / getallenkennis en bewerkingen / meten en metend rekenen / wereldoriëntatie / godsdienst`,
+  wiskunde : `Wiskunde / Bewerkingen / Metend rekenen en meetkunde blijft een werkpunt. Het is belangrijk om voldoende uitleg te komen vragen in de klas.`,
+  spelling : `De dictees van ${displayName.value} zijn onvoldoende. Het is belangrijk om elke dag de woorden van het woordpakket te schrijven en fouten te verbeteren. Op de website van de school vind je ingesproken dictees van elk woordpakket die kunnen helpen bij het oefenen.`,
+  wo_godsdienst : `${bezittVnwCap} resultaten voor w.o. en godsdienst zijn deze periode nogal zwak. Dit zijn onderdelen waar ${aanwijzendVnw} thuis voor moet studeren. ${aanwijzendVnwCap} moet dan elke dag leren en hoofdgedachten noteren.`
+}
+
+const dictAvi = {
+  gelijk : `Het leesniveau van ${displayName.value} is niet gestegen ten opzichte van september. Dat is jammer.  Het is noodzakelijk dat ${displayName.value} elke dag (luidop) leest zodat ${aanwijzendVnw} op het einde van dit schooljaar AVI9 behaalt. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.\n`,
+  gestegen_zwak : `Het leesniveau van ${displayName.value} is gestegen naar Avi 5 / 6 / 7 , dus ${displayName.value} kan beginnen oefenen op Avi 6 / 7 / 8. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.\n`,
+  gestegen_goed : `Het leesniveau van ${displayName.value} is gestegen, goed zo! ${displayName.value} kan beginnen oefenen op Avi 9.\n`,
+  leesdiploma : `${displayName.value} behaalde in januari ${bezittVnw} leesdiploma. Proficiat!`,
+  nvt : ``
+}
+
+const dictTafels = {
+  goed : `De maaltafels en oefeningen van het studeerblad rekenen zijn goed gekend. ${aanwijzendVnwCap} mag ze af en toe blijven opfrissen, zodat deze vlot kunnen gebruikt worden tijdens de lessen wiskunde.\n`,
+  studeerblad_herhalen : `De oefeningen van het studeerblad zijn niet meer goed gekend. Het is nodig om deze oefeningen goed te kennen, zodat ze vlot kunnen toegepast worden tijdens de lessen wiskunde. Regelmatig opnieuw studeren en herhalen is dus belangrijk.\n`,
+  maaltafels_niet_gekend : `De maaltafels zijn niet meer goed gekend. Het is nodig om deze oefeningen goed te kennen, zodat ze vlot kunnen toegepast worden tijdens de lessen wiskunde. Regelmatig opnieuw studeren en herhalen is dus belangrijk.\n`,
+  studeerblad_maaltafels_niet_gekend : `De oefeningen van het studeerblad zijn niet meer goed gekend. Het is nodig om deze oefeningen goed te kennen, zodat ze vlot kunnen toegepast worden tijdens de lessen wiskunde. Regelmatig opnieuw studeren en herhalen is dus belangrijk.\n`
+}
+
+const dictVoorlezen = {
+  goed : `Tijdens het eten in de klas, lees ik elke dag voor uit het boek Mathilda. ${displayName.value} geniet dan volop van dit voorleesmoment.\n`,
+  nvt : ``
+}
+
+const dictSlot = {
+  goed : `De komende periode gaan we weer veel nieuwe dingen leren en ontdekken. Ik kijk er naar uit om ${displayName.value} verder te zien groeien.`,
+  kan_beter : `${displayName.value}, laat de komende periode zien wat je kan!`
+}
   // Combine selected values to create a temporary string to output
   result = displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
   // Check if something has been entered for eigenTekstje
   if (eigenTekstje) {
     result += eigenTekstje +"\n";
   }
-  result += dictSamenwerken[samenwerken] + dictIndividueel[individueel] + dictUitleg[uitleg] + dictKlassikaal[klassikaal] + dictKlGroepje[klGroepje] + dictHelpen[helpen] + dictSchrijven[schrijven] + dictBank[bank] + dictPunten[punten];
+  result += dictSamenwerken[samenwerken] + dictIndividueel[individueel] + dictUitleg[uitleg] + dictKlassikaal[klassikaal] + dictKlGroepje[klGroepje] + dictHelpen[helpen] + dictSchrijven[schrijven] + dictBank[bank] + dictPunten[punten] + dictWerkpunten[werkpunten] + dictAvi[avi] + dictTafels[tafels] + dictVoorlezen[voorlezen] + dictSlot[slot];
 
   // Output result to webpage
   commentPara.innerHTML = result;
 }
 
 function returnSelection(btnSelector) {
-  return document.querySelector(`input[name="${btnSelector}"]:checked`).value;
+  if (btnSelector = werkpunten) {
+    return document.querySelectorAll(`input[name="${btnSelector}"]:checked`);
+  } else {
+    return document.querySelector(`input[name="${btnSelector}"]:checked`).value;
+  }
 }
