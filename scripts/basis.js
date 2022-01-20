@@ -68,7 +68,7 @@ const dictKlassikaal = {
 }
 const dictKlGroepje = {
   goed : ``,
-  niet_goed : ``
+  niet_goed : ``,
   nvt : ""
 }
 
