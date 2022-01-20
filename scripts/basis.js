@@ -154,7 +154,7 @@ const dictSlot = {
 }
 
 function returnSelection(btnSelector) {
-  if (btnSelector = werkpunten) {
+  if (btnSelector = "werkpunten") {
     return document.querySelectorAll(`input[name="${btnSelector}"]:checked`);
   } else {
     return document.querySelector(`input[name="${btnSelector}"]:checked`).value;
