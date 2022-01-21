@@ -172,10 +172,11 @@ function getWerkpuntenFullText(nodelist) {
   // Define dictionary with feedback
   let selectWerkpuntenBeetje1 = document.getElementById(`werkpunten_beetje_selector1`).value;
   let selectWerkpuntenBeetje2 = document.getElementById(`werkpunten_beetje_selector2`).value;
+  let selectWerkpuntWiskunde = document.getElementById("werkpunten_wiskunde_selector").value;
   const dictWerkpunten = {
     inzet : `Ik denk dat ${displayName.value} thuis nog iets meer moet werken voor school.`,
     beetje : `De komende periode kan ${aanwijzendVnw} nog wat extra aandacht schenken aan ${selectWerkpuntenBeetje1} en ${selectWerkpuntenBeetje2}.`,
-    wiskunde : `Wiskunde / Bewerkingen / Metend rekenen en meetkunde blijft een werkpunt. Het is belangrijk om voldoende uitleg te komen vragen in de klas.`,
+    wiskunde : `${selectWerkpuntWiskunde} blijft een werkpunt. Het is belangrijk om voldoende uitleg te komen vragen in de klas.`,
     spelling : `De dictees van ${displayName.value} zijn onvoldoende. Het is belangrijk om elke dag de woorden van het woordpakket te schrijven en fouten te verbeteren. Op de website van de school vind je ingesproken dictees van elk woordpakket die kunnen helpen bij het oefenen.`,
     wo_godsdienst : `${bezittVnwCap} resultaten voor w.o. en godsdienst zijn deze periode nogal zwak. Dit zijn onderdelen waar ${aanwijzendVnw} thuis voor moet studeren. ${aanwijzendVnwCap} moet dan elke dag leren en hoofdgedachten noteren.`
   }
