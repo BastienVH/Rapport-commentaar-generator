@@ -1,7 +1,7 @@
 html {
   display: flex;
   justify-content: center;
-  background-color: rgb(248, 246, 246);
+  background-color: #f4f4f4;
 }
 
 h1 {
@@ -30,6 +30,16 @@ nav ul li a {
 
 .active {
   background-color: red;
+}
+
+input[type='text'] {
+  border: 3px solid #efefef;
+  border-radius: 6px;
+}
+
+textarea {
+  border: 3px solid #efefef;
+  border-radius: 6px;
 }
 
 #containerEigenTxt {
