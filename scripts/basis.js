@@ -54,8 +54,13 @@ function generateBasisFeedback() {
   let slot = returnSelection("slot");
 
   //read value for selectors
-  let selectPuntenIntro1 = document.getElementById(`punten_${punten}_selector1`).value;
-  let selectPuntenIntro2 = document.getElementById(`punten_${punten}_selector2`).value;
+  let selectPuntenIntro1 = "";
+  let selectPuntenIntro2 = "";
+
+  if (punten === "goed" || punten === "schitterend") {
+    selectPuntenIntro1 = document.getElementById(`punten_${punten}_selector1`).value;
+    selectPuntenIntro2 = document.getElementById(`punten_${punten}_selector2`).value;
+  }
 
 
   // Associative arrays with feedback
