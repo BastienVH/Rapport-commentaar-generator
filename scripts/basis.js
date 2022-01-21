@@ -31,7 +31,7 @@ function generateBasisFeedback() {
   let bank = returnSelection("bank");
   let punten = returnSelection("punten");
   //This should return an array of values
-  let werkpunten = returnSelection("werkpunten");
+  // let werkpunten = returnSelection("werkpunten");
   let avi = returnSelection("avi");
   let tafels = returnSelection("tafels");
   let voorlezen = returnSelection("voorlezen");
@@ -141,22 +141,31 @@ const dictSlot = {
   goed : `De komende periode gaan we weer veel nieuwe dingen leren en ontdekken. Ik kijk er naar uit om ${displayName.value} verder te zien groeien.`,
   kan_beter : `${displayName.value}, laat de komende periode zien wat je kan!`
 }
+
   // Combine selected values to create a temporary string to output
   result = displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
   // Check if something has been entered for eigenTekstje
   if (eigenTekstje) {
     result += eigenTekstje +"\n";
   }
-  result += dictSamenwerken[samenwerken] + dictIndividueel[individueel] + dictUitleg[uitleg] + dictKlassikaal[klassikaal] + dictKlGroepje[klGroepje] + dictHelpen[helpen] + dictSchrijven[schrijven] + dictBank[bank] + dictPunten[punten] + dictWerkpunten[werkpunten] + dictAvi[avi] + dictTafels[tafels] + dictVoorlezen[voorlezen] + dictSlot[slot];
+
+  // Make combination for all checked werkpunten
+  // let werkpuntTekst = "";
+  // let werkpuntenLenght = werkpunten.length;
+  // for (werkpunt in werkpuntenLenght) {
+  //   werkpuntTekst += dictWerkpunten[werkpunt].value + "\n";
+  // }
+
+  result += dictSamenwerken[samenwerken] + dictIndividueel[individueel] + dictUitleg[uitleg] + dictKlassikaal[klassikaal] + dictKlGroepje[klGroepje] + dictHelpen[helpen] + dictSchrijven[schrijven] + dictBank[bank] + dictPunten[punten] + dictAvi[avi] + dictTafels[tafels] + dictVoorlezen[voorlezen] + dictSlot[slot];
 
   // Output result to webpage
   commentPara.innerHTML = result;
 }
 
 function returnSelection(btnSelector) {
-  if (btnSelector = "werkpunten") {
-    return document.querySelectorAll(`input[name="${btnSelector}"]:checked`);
-  } else {
+  // if (btnSelector = "werkpunten") {
+    // return document.querySelectorAll(`input[name="${btnSelector}"]:checked`);
+  // } else {
     return document.querySelector(`input[name="${btnSelector}"]:checked`).value;
-  }
+  // }
 }
