@@ -122,9 +122,9 @@ const dictPunten = {
 }
 
 const dictAvi = {
-  gelijk : `Het leesniveau van ${displayName.value} is niet gestegen ten opzichte van september. Dat is jammer.  Het is noodzakelijk dat ${displayName.value} elke dag (luidop) leest zodat ${aanwijzendVnw} op het einde van dit schooljaar AVI9 behaalt. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.\n`,
-  gestegen_zwak : `Het leesniveau van ${displayName.value} is gestegen naar Avi 5 / 6 / 7 , dus ${displayName.value} kan beginnen oefenen op Avi 6 / 7 / 8. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.\n`,
-  gestegen_goed : `Het leesniveau van ${displayName.value} is gestegen, goed zo! ${displayName.value} kan beginnen oefenen op Avi 9.\n`,
+  gelijk : `Het leesniveau van ${displayName.value} is niet gestegen ten opzichte van september. Dat is jammer.  Het is noodzakelijk dat ${displayName.value} elke dag (luidop) leest zodat ${aanwijzendVnw} op het einde van dit schooljaar AVI 9 behaalt. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.\n`,
+  gestegen_zwak : `Het leesniveau van ${displayName.value} is gestegen naar AVI 5 / 6 / 7 , dus ${displayName.value} kan beginnen oefenen op AVI 6 / 7 / 8. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.\n`,
+  gestegen_goed : `Het leesniveau van ${displayName.value} is gestegen, goed zo! ${displayName.value} kan beginnen oefenen op AVI 9.\n`,
   leesdiploma : `${displayName.value} behaalde in januari ${bezittVnw} leesdiploma. Proficiat!`,
   nvt : ``
 }
