@@ -33,14 +33,16 @@ nav ul li a {
   background-color: red;
 }
 
-input[type='text'] {
+textarea, select, input[type='text'] {
   border: 3px solid #efefef;
   border-radius: 6px;
 }
 
-textarea {
-  border: 3px solid #efefef;
-  border-radius: 6px;
+/* style select boxes */
+select, option {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
 }
 
 #containerEigenTxt {
