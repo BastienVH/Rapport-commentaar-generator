@@ -2,6 +2,7 @@ html {
   display: flex;
   justify-content: center;
   background-color: #f4f4f4;
+  font-family: 'Outfit', sans-serif;
 }
 
 h1 {
