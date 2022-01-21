@@ -38,6 +38,10 @@ function generateBasisFeedback() {
   let voorlezen = returnSelection("voorlezen");
   let slot = returnSelection("slot");
 
+  //read value for selectors
+  let selectPuntenIntro1 = document.getElementById(`punten_${punten}_selector1`).value;
+  let selectPuntenIntro2 = document.getElementById(`punten_${punten}_selector2`).value;
+
   if (gender === 'jongen') {
     aanwijzendVnw = "hij";
     aanwijzendVnwCap = "Hij";
@@ -106,8 +110,8 @@ const dictBank = {
 const dictPunten = {
   slecht : `SLECHT`,
   matig : `De resultaten op het rapport van ${displayName.value} kunnen beter.\n`,
-  goed : `Er staan weer een aantal mooie resultaten op het rapport van ${displayName.value}, zoals voor lezen / luisteren / taalsystematiek / getallenkennis en bewerkingen / meten en metend rekenen / wereldoriëntatie / godsdienst en idem . Hier mag ${aanwijzendVnw} erg trots op zijn.\n`,
-  schitterend : `Het rapport van ${displayName.value} staat weer vol schitterende resultaten, zoals voor lezen / luisteren / taalsystematiek / getallenkennis en bewerkingen / meten en metend rekenen / wereldoriëntatie / godsdienst en idem . Hier mag ${aanwijzendVnw} erg trots op zijn.\n`
+  goed : `Er staan weer een aantal mooie resultaten op het rapport van ${displayName.value}, zoals voor ${selectPuntenIntro1} en ${selectPuntenIntro2}. Hier mag ${aanwijzendVnw} erg trots op zijn.\n`,
+  schitterend : `Het rapport van ${displayName.value} staat weer vol schitterende resultaten, zoals voor ${selectPuntenIntro1} en ${selectPuntenIntro2}. Hier mag ${aanwijzendVnw} erg trots op zijn.\n`
 }
 
 const dictWerkpunten = {
