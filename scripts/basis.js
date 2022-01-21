@@ -12,12 +12,13 @@ generateBtn.addEventListener("click", generateBasisFeedback);
 let aanwijzendVnw = "";
 let aanwijzendVnwCap = "";
 let bezittVnw = "";
+let bezittVnwCap = "";
 let lijdVnw = "";
 
 function generateBasisFeedback() {
   // Get selected values from the form
   let gender = returnSelection('gender');
-  let displayName = document.getElementById("name");
+  displayName = document.getElementById("name");
   let beschrijving1 = selectBeschr1.value;
   let beschrijving2 = selectBeschr2.value;
   let eigenTekstje = eigenTekst.value;
@@ -30,8 +31,8 @@ function generateBasisFeedback() {
   let schrijven = returnSelection("schrijven");
   let bank = returnSelection("bank");
   let punten = returnSelection("punten");
-  //This should return an array of values
-  // let werkpunten = returnSelection("werkpunten");
+  let werkpuntenLijst = getWerkpunten();
+  let werkpunten = getWerkpuntenFullText(werkpuntenLijst);
   let avi = returnSelection("avi");
   let tafels = returnSelection("tafels");
   let voorlezen = returnSelection("voorlezen");
@@ -116,7 +117,6 @@ const dictWerkpunten = {
   spelling : `De dictees van ${displayName.value} zijn onvoldoende. Het is belangrijk om elke dag de woorden van het woordpakket te schrijven en fouten te verbeteren. Op de website van de school vind je ingesproken dictees van elk woordpakket die kunnen helpen bij het oefenen.`,
   wo_godsdienst : `${bezittVnwCap} resultaten voor w.o. en godsdienst zijn deze periode nogal zwak. Dit zijn onderdelen waar ${aanwijzendVnw} thuis voor moet studeren. ${aanwijzendVnwCap} moet dan elke dag leren en hoofdgedachten noteren.`
 }
-
 const dictAvi = {
   gelijk : `Het leesniveau van ${displayName.value} is niet gestegen ten opzichte van september. Dat is jammer.  Het is noodzakelijk dat ${displayName.value} elke dag (luidop) leest zodat ${aanwijzendVnw} op het einde van dit schooljaar AVI9 behaalt. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.\n`,
   gestegen_zwak : `Het leesniveau van ${displayName.value} is gestegen naar Avi 5 / 6 / 7 , dus ${displayName.value} kan beginnen oefenen op Avi 6 / 7 / 8. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.\n`,
@@ -156,7 +156,7 @@ const dictSlot = {
   //   werkpuntTekst += dictWerkpunten[werkpunt].value + "\n";
   // }
 
-  result += dictSamenwerken[samenwerken] + dictIndividueel[individueel] + dictUitleg[uitleg] + dictKlassikaal[klassikaal] + dictKlGroepje[klGroepje] + dictHelpen[helpen] + dictSchrijven[schrijven] + dictBank[bank] + dictPunten[punten] + dictAvi[avi] + dictTafels[tafels] + dictVoorlezen[voorlezen] + dictSlot[slot];
+  result += dictSamenwerken[samenwerken] + dictIndividueel[individueel] + dictUitleg[uitleg] + dictKlassikaal[klassikaal] + dictKlGroepje[klGroepje] + dictHelpen[helpen] + dictSchrijven[schrijven] + dictBank[bank] + dictPunten[punten] + werkpunten + dictAvi[avi] + dictTafels[tafels] + dictVoorlezen[voorlezen] + dictSlot[slot];
 
   // Output result to webpage
   commentPara.innerHTML = result;
@@ -168,4 +168,31 @@ function returnSelection(btnSelector) {
   // } else {
     return document.querySelector(`input[name="${btnSelector}"]:checked`).value;
   // }
+}
+
+function getWerkpunten() {
+  let werkpuntenLijst = document.querySelectorAll("input[name='werkpunten']:checked");
+  return werkpuntenLijst;
+}
+
+function getWerkpuntenFullText(nodelist) {
+  // Define dictionary with feedback
+  const dictWerkpunten = {
+    inzet : `Ik denk dat ${displayName.value} thuis nog iets meer moet werken voor school.`,
+    beetje : `De komende periode kan ${aanwijzendVnw} nog wat extra aandacht schenken aan lezen / luisteren / taalsystematiek / getallenkennis en bewerkingen / meten en metend rekenen / wereldoriëntatie / godsdienst en lezen / luisteren / taalsystematiek / getallenkennis en bewerkingen / meten en metend rekenen / wereldoriëntatie / godsdienst`,
+    wiskunde : `Wiskunde / Bewerkingen / Metend rekenen en meetkunde blijft een werkpunt. Het is belangrijk om voldoende uitleg te komen vragen in de klas.`,
+    spelling : `De dictees van ${displayName.value} zijn onvoldoende. Het is belangrijk om elke dag de woorden van het woordpakket te schrijven en fouten te verbeteren. Op de website van de school vind je ingesproken dictees van elk woordpakket die kunnen helpen bij het oefenen.`,
+    wo_godsdienst : `${bezittVnwCap} resultaten voor w.o. en godsdienst zijn deze periode nogal zwak. Dit zijn onderdelen waar ${aanwijzendVnw} thuis voor moet studeren. ${aanwijzendVnwCap} moet dan elke dag leren en hoofdgedachten noteren.`
+  }
+
+  let fullText = "";
+  let length = nodelist.length;
+  console.log(length);
+  for (let i = 0; i < length; i++ ) {
+    console.log(nodelist[i].value);
+    fullText += dictWerkpunten[nodelist[i].value] + " ";
+  }
+  fullText += "\n";
+  console.log(fullText);
+  return fullText;
 }
