@@ -149,13 +149,6 @@ const dictSlot = {
     result += eigenTekstje +"\n";
   }
 
-  // Make combination for all checked werkpunten
-  // let werkpuntTekst = "";
-  // let werkpuntenLenght = werkpunten.length;
-  // for (werkpunt in werkpuntenLenght) {
-  //   werkpuntTekst += dictWerkpunten[werkpunt].value + "\n";
-  // }
-
   result += dictSamenwerken[samenwerken] + dictIndividueel[individueel] + dictUitleg[uitleg] + dictKlassikaal[klassikaal] + dictKlGroepje[klGroepje] + dictHelpen[helpen] + dictSchrijven[schrijven] + dictBank[bank] + dictPunten[punten] + werkpunten + dictAvi[avi] + dictTafels[tafels] + dictVoorlezen[voorlezen] + dictSlot[slot];
 
   // Output result to webpage
@@ -163,11 +156,7 @@ const dictSlot = {
 }
 
 function returnSelection(btnSelector) {
-  // if (btnSelector = "werkpunten") {
-    // return document.querySelectorAll(`input[name="${btnSelector}"]:checked`);
-  // } else {
     return document.querySelector(`input[name="${btnSelector}"]:checked`).value;
-  // }
 }
 
 function getWerkpunten() {
