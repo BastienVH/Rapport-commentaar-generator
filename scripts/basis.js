@@ -115,7 +115,7 @@ const dictBank = {
 }
 
 const dictPunten = {
-  slecht : `SLECHT`,
+  slecht : `SLECHT\n`,
   matig : `De resultaten op het rapport van ${displayName.value} kunnen beter.\n`,
   goed : `Er staan weer een aantal mooie resultaten op het rapport van ${displayName.value}, zoals voor ${selectPuntenIntro1} en ${selectPuntenIntro2}. Hier mag ${aanwijzendVnw} erg trots op zijn.\n`,
   schitterend : `Het rapport van ${displayName.value} staat weer vol schitterende resultaten, zoals voor ${selectPuntenIntro1} en ${selectPuntenIntro2}. Hier mag ${aanwijzendVnw} erg trots op zijn.\n`
