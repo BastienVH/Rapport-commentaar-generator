@@ -141,7 +141,7 @@ const dictSlot = {
 }
 
   // Combine selected values to create a temporary string to output
-  let result = "";
+  let result = "De derde periode van dit schooljaar zit er weeral op. Ook dit keer hebben we heel wat nieuwe dingen geleerd.\n";
 
   result += dictSamenwerken[samenwerken] + dictIndividueel[individueel] + dictUitleg[uitleg] + dictKlassikaal[klassikaal] + dictKlGroepje[klGroepje] + dictHelpen[helpen] + dictSchrijven[schrijven] + dictBank[bank] + dictPunten[punten] + werkpunten + dictAvi[avi] + dictTafels[tafels] + dictVoorlezen[voorlezen] + dictSlot[slot];
 
