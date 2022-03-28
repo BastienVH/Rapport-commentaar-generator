@@ -32,10 +32,10 @@ function generateBasisFeedback() {
 
   displayName = document.getElementById("name");
   let kommagetallen = returnSelection("kommagetallen");
-  // let kloklezen = returnSelection("klok");
-  // let dictee = returnSelection("dictee");
-  // let leerhouding = returnSelection("leerhouding");
-  // let groepswerk = returnSelection("groepswerk");
+  let kloklezen = returnSelection("klok");
+  let dictee = returnSelection("dictee");
+  let leerhouding = returnSelection("leerhouding");
+  let groepswerk = returnSelection("groepswerk");
 
   // Associative arrays with feedback
   const dictKomma = {
@@ -59,11 +59,22 @@ function generateBasisFeedback() {
     slecht: "De resultaten van de dictees moeten echt verbeteren. Voor de woorden uit het woordpakket heeft (hij) vier dagen de tijd om deze te studeren. Dan zouden er niet meer zo veel fouten mogen instaan.\n"
   }
 
+  const dictLeerhouding = {
+    goed: "Ik vind het fijn dat (naam) zich vaak zo goed inzet voor school.\n",
+    woordenschat : "Ik merk dat (naam) stilaan minder inzet toont voor het schoolwerk. Zo heeft (hij) bijvoorbeeld onvoldoende gestudeerd voor de woordenschat taal. Nochtans kan (hij) dit wel. Hoog tijd om weer even wat extra tijd te steken in het studeren thuis.\n",
+    niet_goed : "Het vijfde leerjaar komt stilaan in zicht. Dan komt er veel nieuwe leerstof aan bod en moeten de leerlingen zelfstandig grotere leerstofgehelen instuderen. Op dit moment is dat nog een erg grote uitdaging voor (naam). Het is belangrijk dat (hij) daar nu al op oefent en thuis wat extra aandacht besteed aan studeren voor bijvoorbeeld wereldoriëntatie en woordenschat van taal.\n"
+  }
+
+  const dictGroepswerk = {
+    goed: "Iedereen van de klas stelde in een klein groepje een provincie voor. (naam) zorgde voor een leerrijke tekst en veel extra materiaal. Dat maakte het aangenaam en boeiend om naar te luisteren.\n",
+    blanco : ""
+  }
+
   // Combine selected values to create a temporary string to output
   let result = "De derde periode van dit schooljaar zit er weeral op. Ook dit keer hebben we heel wat nieuwe dingen geleerd.\n";
   let slot = "We repeteerden de afgelopen weken ook hard voor onze musical. (naam) mag erg fier zijn op het resultaat. In maart genoten we van een leuke, leerrijke en zelfs lekkere uitstap naar het chocolademuseum in Antwerpen. Ik kijk al uit naar onze volgende uitstappen.\n(naam), verzamel al je energie tijdens de paasvakantie om er dan de laatste periode met extra veel zin en inzet voor te gaan.\n"
 
-  result += dictKomma[kommagetallen] + slot;
+  result += dictKomma[kommagetallen] + dictKlok[kloklezen] + dictDictee[dictee] + dictLeerhouding[leerhouding] + dictGroepswerk[groepswerk] + slot;
 
   // Output result to webpage
   commentPara.innerHTML = result;
