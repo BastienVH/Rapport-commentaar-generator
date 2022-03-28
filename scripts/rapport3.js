@@ -19,15 +19,9 @@ function generateBasisFeedback() {
   if (gender === 'jongen') {
     aanwijzendVnw = "hij";
     aanwijzendVnwCap = "Hij";
-    bezittVnw = "zijn";
-    bezittVnwCap = "Zijn";
-    lijdVnw = "hem";
   } else {
     aanwijzendVnw = "ze";
     aanwijzendVnwCap = "Ze";
-    bezittVnw = "haar";
-    bezittVnwCap = "Haar";
-    lijdVnw = "haar";
   }
 
   displayName = document.getElementById("name");
@@ -40,8 +34,8 @@ function generateBasisFeedback() {
   // Associative arrays with feedback
   const dictKomma = {
     goed_ook_maten : `Zo rekenden we voor de eerste keer met kommagetallen. Bewerkingen met tienden, honderdsten en duizendsten gaan voorlopig heel vlot voor ${displayName.value}. Zelfs het herleiden van kommagetallen bij lengte- en inhoudsmaten lukt zonder veel moeite. Knap!\n`,
-    goed_maten_minder : `Zo rekenden we voor de eerste keer met kommagetallen. Bewerkingen met tienden, honderdsten en duizendsten gaan voorlopig heel vlot voor ${displayName.value}. Kommagetallen omzetten met een herleidingstabel is soms nog wel een uitdaging. Zet steeds de eenheden als eerste op de juiste plaats, dan volgt de rest wel. Als ${displayName.value} goed mee oefent tijdens de lessen, kan (hij) tegen het einde van het schooljaar een echte kommagetallenkampioen worden.\n`,
-    matig : `Zo rekenden we voor de eerste keer met kommagetallen. Dat is nog niet zo eenvoudig. ${displayName.value} doet goed zijn best. Soms gaat het al heel goed, soms is het nog wat zoeken. (Hij) moet goed kijken welke plaats na de komma welke waarde heeft. Bij het optrekken en aftrekken is het handig om steeds evenveel cijfers na de komma te gebruiken. Als ${displayName.value} goed mee oefent tijdens de lessen, kan (hij) tegen het einde van het schooljaar een echte kommagetallenkampioen worden.\n`,
+    goed_maten_minder : `Zo rekenden we voor de eerste keer met kommagetallen. Bewerkingen met tienden, honderdsten en duizendsten gaan voorlopig heel vlot voor ${displayName.value}. Kommagetallen omzetten met een herleidingstabel is soms nog wel een uitdaging. Zet steeds de eenheden als eerste op de juiste plaats, dan volgt de rest wel. Als ${displayName.value} goed mee oefent tijdens de lessen, kan ${aanwijzendVnw} tegen het einde van het schooljaar een echte kommagetallenkampioen worden.\n`,
+    matig : `Zo rekenden we voor de eerste keer met kommagetallen. Dat is nog niet zo eenvoudig. ${displayName.value} doet goed zijn best. Soms gaat het al heel goed, soms is het nog wat zoeken. ${aanwijzendVnwCap} moet goed kijken welke plaats na de komma welke waarde heeft. Bij het optrekken en aftrekken is het handig om steeds evenveel cijfers na de komma te gebruiken. Als ${displayName.value} goed mee oefent tijdens de lessen, kan ${aanwijzendVnw} tegen het einde van het schooljaar een echte kommagetallenkampioen worden.\n`,
     moeilijk : `Zo rekenden we voor de eerste keer met kommagetallen. Dat is nog niet zo eenvoudig. ${displayName.value} moet goed kijken welke plaats na de komma welke waarde heeft. Bij het optrekken en aftrekken is het handig om steeds evenveel cijfers na de komma te gebruiken. We gaan hier de komende weken nog veel op oefenen.\n`
   }
 
@@ -53,16 +47,16 @@ function generateBasisFeedback() {
 
   const dictDictee = {
     goed: `Voor spelling behaalt ${displayName.value} weer mooie resultaten.\n`,
-    wp_goed_ww_niet: `Op de gewone woordpakketdictees behaalt ${displayName.value} goede resultaat. De werkwoorddictees zijn minder goed. Het is belangrijk dat (hij) de tijd neemt om het werkwoordschema stap voor stap te volgen, dan lukt het vast wel.\n`,
+    wp_goed_ww_niet: `Op de gewone woordpakketdictees behaalt ${displayName.value} goede resultaat. De werkwoorddictees zijn minder goed. Het is belangrijk dat ${aanwijzendVnw} de tijd neemt om het werkwoordschema stap voor stap te volgen, dan lukt het vast wel.\n`,
     beter : `Voor spelling behaalt ${displayName.value} al betere resultaten dan op het vorige rapport. Hopelijk zet deze stijgende lijn zich verder tijdens de laatste periode.\n`,
-    wisselend: `De resultaten van de dictees van ${displayName.value} zijn erg wisselend. (Hij) moet elke week evenveel inzet tonen en steeds denken aan de spellingsregels.\n`,
-    slecht: `De resultaten van de dictees moeten echt verbeteren. Voor de woorden uit het woordpakket heeft (hij) vier dagen de tijd om deze te studeren. Dan zouden er niet meer zo veel fouten mogen instaan.\n`
+    wisselend: `De resultaten van de dictees van ${displayName.value} zijn erg wisselend. ${aanwijzendVnwCap} moet elke week evenveel inzet tonen en steeds denken aan de spellingsregels.\n`,
+    slecht: `De resultaten van de dictees moeten echt verbeteren. Voor de woorden uit het woordpakket heeft ${aanwijzendVnw} vier dagen de tijd om deze te studeren. Dan zouden er niet meer zo veel fouten mogen instaan.\n`
   }
 
   const dictLeerhouding = {
     goed: `Ik vind het fijn dat ${displayName.value} zich vaak zo goed inzet voor school.\n`,
-    woordenschat : `Ik merk dat ${displayName.value} stilaan minder inzet toont voor het schoolwerk. Zo heeft (hij) bijvoorbeeld onvoldoende gestudeerd voor de woordenschat taal. Nochtans kan (hij) dit wel. Hoog tijd om weer even wat extra tijd te steken in het studeren thuis.\n`,
-    niet_goed : `Het vijfde leerjaar komt stilaan in zicht. Dan komt er veel nieuwe leerstof aan bod en moeten de leerlingen zelfstandig grotere leerstofgehelen instuderen. Op dit moment is dat nog een erg grote uitdaging voor ${displayName.value}. Het is belangrijk dat (hij) daar nu al op oefent en thuis wat extra aandacht besteed aan studeren voor bijvoorbeeld wereldoriëntatie en woordenschat van taal.\n`
+    woordenschat : `Ik merk dat ${displayName.value} stilaan minder inzet toont voor het schoolwerk. Zo heeft ${aanwijzendVnw} bijvoorbeeld onvoldoende gestudeerd voor de woordenschat taal. Nochtans kan ${aanwijzendVnw} dit wel. Hoog tijd om weer even wat extra tijd te steken in het studeren thuis.\n`,
+    niet_goed : `Het vijfde leerjaar komt stilaan in zicht. Dan komt er veel nieuwe leerstof aan bod en moeten de leerlingen zelfstandig grotere leerstofgehelen instuderen. Op dit moment is dat nog een erg grote uitdaging voor ${displayName.value}. Het is belangrijk dat ${aanwijzendVnw} daar nu al op oefent en thuis wat extra aandacht besteed aan studeren voor bijvoorbeeld wereldoriëntatie en woordenschat van taal.\n`
   }
 
   const dictGroepswerk = {
