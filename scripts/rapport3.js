@@ -47,8 +47,9 @@ function generateBasisFeedback() {
 
   // Combine selected values to create a temporary string to output
   let result = "De derde periode van dit schooljaar zit er weeral op. Ook dit keer hebben we heel wat nieuwe dingen geleerd.\n";
+  let slot = "We repeteerden de afgelopen weken ook hard voor onze musical. (naam) mag erg fier zijn op het resultaat. In maart genoten we van een leuke, leerrijke en zelfs lekkere uitstap naar het chocolademuseum in Antwerpen. Ik kijk al uit naar onze volgende uitstappen.\n(naam), verzamel al je energie tijdens de paasvakantie om er dan de laatste periode met extra veel zin en inzet voor te gaan.\n"
 
-  result += dictKomma[kommagetallen];
+  result += dictKomma[kommagetallen] + slot;
 
   // Output result to webpage
   commentPara.innerHTML = result;
