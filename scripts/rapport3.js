@@ -45,6 +45,20 @@ function generateBasisFeedback() {
     moeilijk : "Zo rekenden we voor de eerste keer met kommagetallen. Dat is nog niet zo eenvoudig. (naam) moet goed kijken welke plaats na de komma welke waarde heeft. Bij het optrekken en aftrekken is het handig om steeds evenveel cijfers na de komma te gebruiken. We gaan hier de komende weken nog veel op oefenen.\n" 
   }
 
+  const dictKlok = {
+    alles_goed : "Kloklezen gaat prima. Ook vraagstukjes rond tijd kan (naam) correct oplossen.\n",
+    goed_behalve_vraagstuk : "Kloklezen gaat prima. Vraagstukjes rond tijd vindt (naam) moeilijker.\n",
+    moeilijk: "Kloklezen blijft erg moeilijk voor (naam). Probeer hier thuis regelmatig even op te oefenen.\n"
+  }
+
+  const dictDictee = {
+    goed: "Voor spelling behaalt (naam) weer mooie resultaten.\n",
+    wp_goed_ww_niet: "Op de gewone woordpakketdictees behaalt (naam) goede resultaat. De werkwoorddictees zijn minder goed. Het is belangrijk dat (hij) de tijd neemt om het werkwoordschema stap voor stap te volgen, dan lukt het vast wel.\n",
+    beter : "Voor spelling behaalt (naam) al betere resultaten dan op het vorige rapport. Hopelijk zet deze stijgende lijn zich verder tijdens de laatste periode.\n",
+    wisselend: "De resultaten van de dictees van (naam) zijn erg wisselend. (Hij) moet elke week evenveel inzet tonen en steeds denken aan de spellingsregels.\n",
+    slecht: "De resultaten van de dictees moeten echt verbeteren. Voor de woorden uit het woordpakket heeft (hij) vier dagen de tijd om deze te studeren. Dan zouden er niet meer zo veel fouten mogen instaan.\n"
+  }
+
   // Combine selected values to create a temporary string to output
   let result = "De derde periode van dit schooljaar zit er weeral op. Ook dit keer hebben we heel wat nieuwe dingen geleerd.\n";
   let slot = "We repeteerden de afgelopen weken ook hard voor onze musical. (naam) mag erg fier zijn op het resultaat. In maart genoten we van een leuke, leerrijke en zelfs lekkere uitstap naar het chocolademuseum in Antwerpen. Ik kijk al uit naar onze volgende uitstappen.\n(naam), verzamel al je energie tijdens de paasvakantie om er dan de laatste periode met extra veel zin en inzet voor te gaan.\n"
