@@ -18,6 +18,93 @@
       <li><a href="eindrapport.html" class="active">4C - Eindrapport</a></li>
     </ul>
   </nav>
-  
+  <form>
+    <fieldset>
+      <label for="name">Naam van de leerling</label>
+      <input type="text" name="name" id="name">
+    </fieldset>
+    <fieldset>
+      <legend>Geslacht</legend>
+      <input type="radio" name="gender" id="jongen" value="jongen"><label for="jongen">jongen</label><br>
+      <input type="radio" name="gender" id="meisje" value="meisje"><label for="meisje">meisje</label>
+    </fieldset>
+    <fieldset>
+      <legend>Persoonlijk 1</legend>
+      <input type="radio" name="pers1" id="lieve" value=""><label for="lieve">lieve</label><br>
+      <input type="radio" name="pers1" id="enthousiaste" value=""><label for="enthousiaste">enthousiaste</label><br>
+      <input type="radio" name="pers1" id="opgewekte" value=""><label for="opgewekte">opgewekte</label><br>
+      <input type="radio" name="pers1" id="gemotiveerde" value=""><label for="gemotiveerde">gemotiveerde</label><br>
+      <input type="radio" name="pers1" id="stoere" value=""><label for="stoere">stoere</label><br>
+      <input type="radio" name="pers1" id="verstandige" value=""><label for="verstandige">verstandige</label><br>
+      <input type="radio" name="pers1" id="plichtsbewuste" value=""><label for="plichtsbewuste">plichtsbewuste</label><br>
+      <input type="radio" name="pers1" id="hulpvaardige" value=""><label for="hulpvaardige">hulpvaardige</label><br>
+      <input type="radio" name="pers1" id="speelse" value=""><label for="speelse">speelse</label><br>
+      <input type="radio" name="pers1" id="uitbundige" value=""><label for="uitbundige">uitbundige</label><br>
+      <input type="radio" name="pers1" id="other1" value="other1"><input type="text" id="pers1other"><br>
+    </fieldset>
+    <fieldset>
+      <legend>Persoonlijk 2</legend>
+      <input type="radio" name="pers2" id="klaar" value="die klaar is om naar het vijfde leerjaar te gaan"><label for="klaar">die klaar is om naar het vijfde leerjaar te gaan</label><br>
+      <input type="radio" name="pers2" id="sfeer" value="die bijdraagt aan de fijne sfeer in de klas"><label for="sfeer">die bijdraagt aan de fijne sfeer in de klas</label><br>
+      <input type="radio" name="pers2" id="plezier" value="die graag plezier maakt"><label for="plezier">die graag plezier maakt</label><br>
+      <input type="radio" name="pers2" id="spotlight" value="die graag in de spotlight staat"><label for="spotlight">die graag in de spotlight staat</label><br>
+      <input type="radio" name="pers2" id="nietmiddelpunt" value="die liever niet in het middelpunt van de belangstelling staat"><label for="nietmiddelpunt">die liever niet in het middelpunt van de belangstelling staat</label><br>
+      <input type="radio" name="pers2" id="humor" value="met een groot gevoel voor humor"><label for="humor">met een groot gevoel voor humor</label><br>
+      <input type="radio" name="pers2" id="beste" value="die voor iedereen het beste wil"><label for="beste">die voor iedereen het beste wil</label><br>
+      <input type="radio" name="pers2" id="hart" value="met het hart op de juiste plaats"><label for="hart">met het hart op de juiste plaats</label><br>
+      <input type="radio" name="pers2" id="other2" value="other2"><input type="text" id="pers2other"><br>
+    </fieldset>
+    <fieldset>
+      <legend>Inzet</legend>
+      <input type="radio" name="resultaten" id="inzet_heelgoed" value="heelgoed"><label for="inzet_heelgoed">heel goed</label><br>
+      <input type="radio" name="resultaten" id="inzet_meestalgoed" value="meestalgoed"><label for="inzet_meestalgoed">meestal goed</label><br>
+      <input type="radio" name="resultaten" id="inzet_goedzwak" value="goedzwak"><label for="inzet_goedzwak">goed, zwakke leerling</label><br>
+      <input type="radio" name="resultaten" id="inzet_goedbabbelen" value="goedbabbelen"><label for="inzet_goedbabbelen">goed, maar babbelen</label><br>
+      <input type="radio" name="resultaten" id="inzet_wisselend" value="wisselend"><label for="inzet_wisselend"></label>wisselend<br>
+      <input type="radio" name="resultaten" id="inzet_speels" value="speels"><label for="inzet_speels">speels</label><br>
+      <input type="radio" name="resultaten" id="inzet_droomt" value="droomt"><label for="inzet_droomt">droomt weg</label><br>
+      <input type="radio" name="resultaten" id="inzet_nietgoed" value="nietgoed"><label for="inzet_nietgoed">niet goed</label><br>
+      <input type="radio" name="resultaten" id="inzet_other" value="other"><input type="text" name="inzet_other" id="inzet_other"><br>
+    </fieldset>
+    <fieldset>
+      <legend>Netheid</legend>
+      <input type="radio" name="netheid" id="netheid_netjes" value="netjes"><label for="netheid_netjes">netjes</label><br>
+      <input type="radio" name="netheid" id="netheid_slordig" value="slordig"><label for="netheid_slordig">slordig</label><br>
+      <input type="radio" name="netheid" id="netheid_leeg" value="leeg"><label for="netheid_leeg">/</label><br>
+    </fieldset>
+    <fieldset>
+      <legend>Vragen</legend>
+      <input type="radio" name="vragen" id="vragen_uitleggen" value="uitleggen"><label for="vragen_uitleggen">goed vragen stellen + uitleggen</label><br>
+      <input type="radio" name="vragen" id="vragen_goed" value="goed"><label for="vragen_goed">goed vragen stellen</label><br>
+      <input type="radio" name="vragen" id="vragen_tesnel" value="tesnel"><label for="vragen_tesnel">te snel vragen stellen</label><br>
+      <input type="radio" name="vragen" id="vragen_sneller" value="sneller"><label for="vragen_sneller">sneller vragen stellen</label><br>
+      <input type="radio" name="vragen" id="vragen_geen" value="geen"><label for="vragen_geen">stelt geen vragen</label><br>
+    </fieldset>
+    <fieldset>
+      <legend>Resultaten</legend>
+      <input type="radio" name="resultaten" id="resultaten_altijdgoed" value="altijdgoed"><label for="resultaten_altijdgoed">altijd goed</label><br>
+      <input type="radio" name="resultaten" id="resultaten_goed" value="goed"><label for="resultaten_">goed</label><br>
+      <input type="radio" name="resultaten" id="resultaten_goedzorg" value="goedzorg"><label for="resultaten_goedzorg">goed, veel zorg</label><br>
+      <input type="radio" name="resultaten" id="resultaten_dictees" value="dictees"><label for="resultaten_dictees">slechte dictees</label><br>
+      <input type="radio" name="resultaten" id="resultaten_ng_welover" value="nr_welover"><label for="resultaten_ng_welover">niet goed, wel over</label><br>
+      <input type="radio" name="resultaten" id="resultaten_ng_zitten" value="ng_zitten"><label for="resultaten_ng_zitten">niet goed, blijven zitten</label><br>
+      <input type="radio" name="resultaten" id="resultaten_1B" value="1B"><label for="resultaten_1B">Niet goed, 1B-traject</label><br>
+    </fieldset>
+    <fieldset>
+      <legend>Drukker op het einde</legend>
+      <input type="radio" name="drukker" id="drukker_wel" value="drukker"><label for="drukker_wel">einde wat drukker</label><br>
+      <input type="radio" name="drukker" id="drukker_niet" value="geen"><label for="drukker_niet">/</label><br>
+    </fieldset>
+    <fieldset>
+      <legend>Slot</legend>
+      <input type="radio" name="slot" id="slot_leuk" value="leuk"><label for="slot_leuk">leuk</label><br>
+      <input type="radio" name="slot" id="slot_gewoon" value="gewoon"><label for="slot_gewoon">gewoon</label><br>
+      <input type="radio" name="slot" id="slot_avi" value="avi"><label for="slot_avi">geen avi 9</label><br>
+    </fieldset>
+    <button type="submit" id="generateButton">Genereer commentaar</button>
+    <br>
+    <label for="commentaartekst">Rapportcommentaar</label><br>
+    <textarea name="commentaartekst" id="commentaartekst" cols="60" rows="10"></textarea>
+  </form>
 </body>
 </html>
