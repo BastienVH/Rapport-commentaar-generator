@@ -18,7 +18,7 @@
       <li><a href="eindrapport.html" class="active">4C - Eindrapport</a></li>
     </ul>
   </nav>
-  <form onsubmit="generateFeedback();return false">
+  <form>
     <fieldset>
       <label for="name">Naam van de leerling</label>
       <input type="text" name="name" id="name">
@@ -56,15 +56,15 @@
     </fieldset>
     <fieldset>
       <legend>Inzet</legend>
-      <input type="radio" name="resultaten" id="inzet_heelgoed" value="heelgoed"><label for="inzet_heelgoed">heel goed</label><br>
-      <input type="radio" name="resultaten" id="inzet_meestalgoed" value="meestalgoed"><label for="inzet_meestalgoed">meestal goed</label><br>
-      <input type="radio" name="resultaten" id="inzet_goedzwak" value="goedzwak"><label for="inzet_goedzwak">goed, zwakke leerling</label><br>
-      <input type="radio" name="resultaten" id="inzet_goedbabbelen" value="goedbabbelen"><label for="inzet_goedbabbelen">goed, maar babbelen</label><br>
-      <input type="radio" name="resultaten" id="inzet_wisselend" value="wisselend"><label for="inzet_wisselend"></label>wisselend<br>
-      <input type="radio" name="resultaten" id="inzet_speels" value="speels"><label for="inzet_speels">speels</label><br>
-      <input type="radio" name="resultaten" id="inzet_droomt" value="droomt"><label for="inzet_droomt">droomt weg</label><br>
-      <input type="radio" name="resultaten" id="inzet_nietgoed" value="nietgoed"><label for="inzet_nietgoed">niet goed</label><br>
-      <input type="radio" name="resultaten" id="inzet_other" value="other"><input type="text" name="inzet_other" id="inzet_other"><br>
+      <input type="radio" name="inzet" id="inzet_heelgoed" value="heelgoed"><label for="inzet_heelgoed">heel goed</label><br>
+      <input type="radio" name="inzet" id="inzet_meestalgoed" value="meestalgoed"><label for="inzet_meestalgoed">meestal goed</label><br>
+      <input type="radio" name="inzet" id="inzet_goedzwak" value="goedzwak"><label for="inzet_goedzwak">goed, zwakke leerling</label><br>
+      <input type="radio" name="inzet" id="inzet_goedbabbelen" value="goedbabbelen"><label for="inzet_goedbabbelen">goed, maar babbelen</label><br>
+      <input type="radio" name="inzet" id="inzet_wisselend" value="wisselend"><label for="inzet_wisselend"></label>wisselend<br>
+      <input type="radio" name="inzet" id="inzet_speels" value="speels"><label for="inzet_speels">speels</label><br>
+      <input type="radio" name="inzet" id="inzet_droomt" value="droomt"><label for="inzet_droomt">droomt weg</label><br>
+      <input type="radio" name="inzet" id="inzet_nietgoed" value="nietgoed"><label for="inzet_nietgoed">niet goed</label><br>
+      <input type="radio" name="inzet" id="inzet_other" value="other"><input type="text" name="inzet_other" id="inzet_other"><br>
     </fieldset>
     <fieldset>
       <legend>Netheid</legend>
@@ -101,7 +101,7 @@
       <input type="radio" name="slot" id="slot_gewoon" value="gewoon"><label for="slot_gewoon">gewoon</label><br>
       <input type="radio" name="slot" id="slot_avi" value="avi"><label for="slot_avi">geen avi 9</label><br>
     </fieldset>
-    <button type="submit" id="generateButton">Genereer commentaar</button>
+    <button type="button" id="generateButton">Genereer commentaar</button>
     <br>
     <label for="commentaartekst">Rapportcommentaar</label><br>
     <textarea name="commentaartekst" id="commentaartekst" cols="60" rows="10"></textarea>
