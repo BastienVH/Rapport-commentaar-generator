@@ -31,7 +31,13 @@ function generateFeedback() {
   feedback += persoonlijk;
 
   // get feedback for inzet
-  feedback += getFeedback(dictInzet, returnSelection('inzet'));
+  let inzet = returnSelection('inzet');
+  if (inzet == 'other') {
+    inzet = document.querySelector('#inzet_other_text').value + "\n";
+  } else {
+    inzet = getFeedback(dictInzet, returnSelection('inzet'));
+  };
+  feedback += inzet;
   // get feedback for netheid
   feedback += getFeedback(dictNetheid, returnSelection('netheid'));
   // get feedback for vragen
