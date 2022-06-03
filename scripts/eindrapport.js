@@ -1,6 +1,6 @@
 // Initialize document elements
 const commentPara = document.getElementById("commentaartekst");
-const displayName = document.getElementById("name");
+const displayName = document.getElementById("name").value;
 
 // code for generate button
 const generateBtn = document.getElementById("generateButton");
@@ -27,7 +27,7 @@ function generateFeedback() {
   if (pers2 == 'other2') {
     pers2 = document.querySelector('#pers2other').value;
   }
-  let persoonlijk = `(naam) heeft laten zien dat (hij) een ${pers1} (jongen) is ${pers2}.\n`;
+  let persoonlijk = `${displayName} heeft laten zien dat ${aanwijzendVnw} een ${pers1} (jongen) is ${pers2}.\n`;
   feedback += persoonlijk;
 
   // get feedback for inzet
@@ -76,47 +76,47 @@ function getFeedback(section, value){
 };
 
 dictInzet = {
-  heelgoed: `(naam) wilt graag een mooi resultaat behalen en zet zich daar enorm voor in.`,
-  meestalgoed: `(naam) wilt altijd een mooi resultaat. Daar zet (hij) zich meestal goed voor in. Af en toe laat (hij) ook (zijn) hoofd hangen of denkt (hij) dat het vanzelf wel zal lukken. (Hij) moet proberen om er ook op die momenten voor te blijven gaan. `,
-  goedzwak: `(naam) wilt graag een mooi resultaat. Daar zet (hij) zich ook enorm voor in, want niet alles gaat even gemakkelijk.`,
-  goedbabbelen: `(naam) toonde toen dat (hij) hard kan werken wanneer (hij) dat wilt, al durfde (hij) ook wel eens babbelen met een buurtje.`,
-  wisselend: `De ene keer werkt (naam) knap mee en is (hij) met alles in orde, de andere keer laat (hij) (zijn) hoofd hangen en werkt (hij) niet mee. Een goede voorbereiding gebeurt in de klas maar ook in de studie en thuis.`,
-  speels: `(naam) toonde vooral veel speelsheid. (Hij) wilde in de klas veel plezier maken met (zijn) vrienden. Nauwkeurig werken en thuis studeren vond (hij) minder belangrijk. In een klein groepje bij de juf deed (hij) wel (zijn) best.`,
-  droomt: `(naam) droomt vaak weg in de klas. Dan weet (hij) het antwoord niet of weet (hij) niet waar we bezig zijn. (Hij) moet in het vijfde leerjaar proberen meteen (zijn) focus bij de les te houden.`,
-  nietgoed: `(naam) mist wat motivatie om zich in te zetten voor zijn schoolwerk. Van zodra het een beetje moeilijker wordt, haakt (hij) af. Dat is jammer, want hij zal nog een heel aantal jaren op school doorbrengen.`,
+  heelgoed: `${displayName} wilt graag een mooi resultaat behalen en zet zich daar enorm voor in.`,
+  meestalgoed: `${displayName} wilt altijd een mooi resultaat. Daar zet ${aanwijzendVnw} zich meestal goed voor in. Af en toe laat ${aanwijzendVnw} ook ${bezittVnw} hoofd hangen of denkt ${aanwijzendVnw} dat het vanzelf wel zal lukken. ${aanwijzendVnwCap} moet proberen om er ook op die momenten voor te blijven gaan. `,
+  goedzwak: `${displayName} wilt graag een mooi resultaat. Daar zet ${aanwijzendVnw} zich ook enorm voor in, want niet alles gaat even gemakkelijk.`,
+  goedbabbelen: `${displayName} toonde toen dat ${aanwijzendVnw} hard kan werken wanneer ${aanwijzendVnw} dat wilt, al durfde ${aanwijzendVnw} ook wel eens babbelen met een buurtje.`,
+  wisselend: `De ene keer werkt ${displayName} knap mee en is ${aanwijzendVnw} met alles in orde, de andere keer laat ${aanwijzendVnw} ${bezittVnw} hoofd hangen en werkt ${aanwijzendVnw} niet mee. Een goede voorbereiding gebeurt in de klas maar ook in de studie en thuis.`,
+  speels: `${displayName} toonde vooral veel speelsheid. ${aanwijzendVnwCap} wilde in de klas veel plezier maken met ${bezittVnw} vrienden. Nauwkeurig werken en thuis studeren vond ${aanwijzendVnw} minder belangrijk. In een klein groepje bij de juf deed ${aanwijzendVnw} wel ${bezittVnw} best.`,
+  droomt: `${displayName} droomt vaak weg in de klas. Dan weet ${aanwijzendVnw} het antwoord niet of weet ${aanwijzendVnw} niet waar we bezig zijn. ${aanwijzendVnwCap} moet in het vijfde leerjaar proberen meteen ${bezittVnw} focus bij de les te houden.`,
+  nietgoed: `${displayName} mist wat motivatie om zich in te zetten voor zijn schoolwerk. Van zodra het een beetje moeilijker wordt, haakt ${aanwijzendVnw} af. Dat is jammer, want hij zal nog een heel aantal jaren op school doorbrengen.`,
 }
 
 dictNetheid = {
-  netjes: `(Hij) werkt steeds netjes en nauwkeurig.\n`,
-  slordig: `In het vijfde leerjaar mag (hij) meer aandacht besteden aan netheid en orde. Dat zal (zijn) nieuwe juf of meester zeker waarderen.\n`,
+  netjes: `${aanwijzendVnwCap} werkt steeds netjes en nauwkeurig.\n`,
+  slordig: `In het vijfde leerjaar mag ${aanwijzendVnw} meer aandacht besteden aan netheid en orde. Dat zal ${bezittVnw} nieuwe juf of meester zeker waarderen.\n`,
   leeg: ''
 }
 
 dictVragen = {
-  uitleggen: `Wanneer (hij) iets niet begrijpt, komt (hij) zelf uitleg vragen. Dat is een goede werkhouding. (Hij) vindt het ook fijn om andere leerlingen te helpen als ze een vraag hebben. Het is heel fijn dat ik soms een extra (meester) in de klas heb.\n`,
-  goed: `Wanneer (hij) iets niet begrijpt, komt (hij) zelf uitleg vragen. Dat is een goede werkhouding.\n`,
-  tesnel: `(naam) komt nogal snel hulp vragen wanneer (hij) iets niet begrijpt. Het is goed dat (hij) uitleg komt vragen als hij het echt niet kan, maar (hij) moet ook leren om eerst zelf een aantal manieren uit te proberen. (Hij) mag er meer op vertrouwen dat (hij) zelf met een goede oplossing kan komen.\n`,
-  sneller: `Wanneer (hij) iets niet begrijpt, stelt (hij) wel vragen, maar (hij) wacht er soms te lang mee. Van zodra (hij) een probleem ondervindt en het niet opgelost krijgt, mag (hij) hulp vragen. \n`,
-  geen: `Het blijft belangrijk om hulp te vragen wanneer iets niet lukt. Daar hoeft (naam) geen schrik voor te hebben: iedereen komt naar school om bij te leren. Dat kan je niet alleen.\n`
+  uitleggen: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding. ${aanwijzendVnwCap} vindt het ook fijn om andere leerlingen te helpen als ze een vraag hebben. Het is heel fijn dat ik soms een extra (meester) in de klas heb.\n`,
+  goed: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding.\n`,
+  tesnel: `${displayName} komt nogal snel hulp vragen wanneer ${aanwijzendVnw} iets niet begrijpt. Het is goed dat ${aanwijzendVnw} uitleg komt vragen als hij het echt niet kan, maar ${aanwijzendVnw} moet ook leren om eerst zelf een aantal manieren uit te proberen. ${aanwijzendVnwCap} mag er meer op vertrouwen dat ${aanwijzendVnw} zelf met een goede oplossing kan komen.\n`,
+  sneller: `Wanneer ${aanwijzendVnw} iets niet begrijpt, stelt ${aanwijzendVnw} wel vragen, maar ${aanwijzendVnw} wacht er soms te lang mee. Van zodra ${aanwijzendVnw} een probleem ondervindt en het niet opgelost krijgt, mag ${aanwijzendVnw} hulp vragen. \n`,
+  geen: `Het blijft belangrijk om hulp te vragen wanneer iets niet lukt. Daar hoeft ${displayName} geen schrik voor te hebben: iedereen komt naar school om bij te leren. Dat kan je niet alleen.\n`
 }
 
 dictResultaten = {
-  altijdgoed: `(Hij) legde dit schooljaar de ene knappe toets na de andere af en kon steeds met een schitterend rapport naar huis. Dat is ook nu niet anders.\n`,
-  goed: `(naam) behaalde zeer goede resultaten (ZELF IN TE VULLEN). Hier mag (hij) erg trots op zijn. (Hij) kan volgend schooljaar nog wat extra aandacht te schenken aan (ZELF IN TE VULLEN).\n`,
-  goedzorg: `(Naam) behaalde goede resultaten voor (ZELF IN TE VULLEN). Daar mag (hij) erg trots op zijn. (ZELF IN TE VULLEN) waren altijd wat moeilijker voor (hem). (Hij) zette zich daar wel steeds voor in samen met de zorgjuf of in een klein groepje bij (zijn) eigen juf. Hopelijk toont (hij) ook volgend schooljaar diezelfde inzet.\n`,
+  altijdgoed: `${aanwijzendVnwCap} legde dit schooljaar de ene knappe toets na de andere af en kon steeds met een schitterend rapport naar huis. Dat is ook nu niet anders.\n`,
+  goed: `${displayName} behaalde zeer goede resultaten (ZELF IN TE VULLEN). Hier mag ${aanwijzendVnw} erg trots op zijn. ${aanwijzendVnwCap} kan volgend schooljaar nog wat extra aandacht te schenken aan (ZELF IN TE VULLEN).\n`,
+  goedzorg: `${displayName} behaalde goede resultaten voor (ZELF IN TE VULLEN). Daar mag ${aanwijzendVnw} erg trots op zijn. (ZELF IN TE VULLEN) waren altijd wat moeilijker voor (hem). ${aanwijzendVnwCap} zette zich daar wel steeds voor in samen met de zorgjuf of in een klein groepje bij ${bezittVnw} eigen juf. Hopelijk toont ${aanwijzendVnw} ook volgend schooljaar diezelfde inzet.\n`,
   dictees: `Er staan een aantal prima resultaten op je rapport. Spelling heb je niet altijd even goed gestudeerd, sommige dictees gingen vlot, andere helemaal niet. Onthoud dat je volgend jaar zeer regelmatig moet studeren voor spelling en Frans.\n`,
-  ng_welover: `(Zijn) resultaten voor (ZELF IN TE VULLEN) waren goed. Voor (ZELF IN TE VULLEN) kon (hij) nog wat beter. (Zijn) resultaten voor (ZELF IN TE VULLEN) waren echt onvoldoende. Het is belangrijk om voldoende te studeren voor (ZELF IN TE VULLEN). Ook aandachtig opletten in de klas kan helpen.`,
-  ng_zitten: `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal (naam) het vierde leerjaar opnieuw doen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen. Ik hoop dat (hij) zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`,
-  '1B': `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal (naam) naar het vijfde leerjaar gaan, maar een aangepast traject volgen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen.  Deze aangepaste leerstof bereidt (hem) voor om het jaar nadien over te gaan naar een 1B in het middelbaar. Ik hoop dat (hij) zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`
+  ng_welover: `${bezittVnwCap} resultaten voor (ZELF IN TE VULLEN) waren goed. Voor (ZELF IN TE VULLEN) kon ${aanwijzendVnw} nog wat beter. ${bezittVnwCap} resultaten voor (ZELF IN TE VULLEN) waren echt onvoldoende. Het is belangrijk om voldoende te studeren voor (ZELF IN TE VULLEN). Ook aandachtig opletten in de klas kan helpen.`,
+  ng_zitten: `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} het vierde leerjaar opnieuw doen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`,
+  '1B': `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} naar het vijfde leerjaar gaan, maar een aangepast traject volgen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen.  Deze aangepaste leerstof bereidt (hem) voor om het jaar nadien over te gaan naar een 1B in het middelbaar. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`
 }
 
 dictDrukker = {
-  drukker: `Ik merk dat het schooljaar voor (naam) lang genoeg geduurd heeft. (Hij) kreeg het de laatste tijd moeilijker om stil te zijn tussendoor en had vaker opmerkingen nodig dan ik van (hem) gewend ben.\n`,
+  drukker: `Ik merk dat het schooljaar voor ${displayName} lang genoeg geduurd heeft. ${aanwijzendVnwCap} kreeg het de laatste tijd moeilijker om stil te zijn tussendoor en had vaker opmerkingen nodig dan ik van (hem) gewend ben.\n`,
   leeg:'' 
 }
 
 dictSlot = {
-  leuk: `(naam), het was een plezier om jou in de klas te hebben. Nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`,
-  gewoon: `(naam), nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`,
-  avi: `(naam), nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! Misschien behaal je dan in september wel je leesdiploma? In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`
+  leuk: `${displayName}, het was een plezier om jou in de klas te hebben. Nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`,
+  gewoon: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`,
+  avi: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! Misschien behaal je dan in september wel je leesdiploma? In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`
 }
