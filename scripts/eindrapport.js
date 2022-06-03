@@ -19,6 +19,17 @@ function generateFeedback() {
   setPronouns();
   let feedback = 'Het vierde leerjaar zit er op. We hebben veel bijgeleerd en samen leuke herinneringen gemaakt. Bij de hoogtepunten van deze laatste periode horen zeker de uitstap naar de Zoo, onze zelfgemaakte machines en de sportdag.\n';
   // get feedback for persoonlijk
+  let pers1 = returnSelection('pers1');
+  if (pers1 == 'other1') {
+    pers1 = document.querySelector('#pers1other').value;
+  }
+  let pers2 = returnSelection('pers2'); 
+  if (pers2 == 'other2') {
+    pers2 = document.querySelector('#pers2other').value;
+  }
+  let persoonlijk = `(naam) heeft laten zien dat (hij) een ${pers1} (jongen) is ${pers2}.\n`;
+  feedback += persoonlijk;
+
   // get feedback for inzet
   feedback += getFeedback(dictInzet, returnSelection('inzet'));
   // get feedback for netheid
