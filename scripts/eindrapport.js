@@ -49,7 +49,7 @@ function generateFeedback() {
   feedback += getFeedback(dictSlot, returnSelection('slot'));
 
   // put feedback on page
-  commentPara.innerText = feedback;
+  commentPara.value = feedback;
 }
 
 function returnSelection(btnSelector) {
