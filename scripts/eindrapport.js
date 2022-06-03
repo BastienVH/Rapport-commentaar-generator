@@ -22,10 +22,14 @@ function generateFeedback() {
   // get feedback for inzet
   feedback += getFeedback(dictInzet, returnSelection('inzet'));
   // get feedback for netheid
+  feedback += getFeedback(dictNetheid, returnSelection('netheid'));
   // get feedback for vragen
+  feedback += getFeedback(dictVragen, returnSelection('vragen'));
   // get feedback for resulaten
   // get feedback for eind drukker
+  feedback += getFeedback(dictDrukker, returnSelection('drukker'));
   // get feedback for slot
+  feedback += getFeedback(dictSlot, returnSelection('slot'));
 
   // put feedback on page
   commentPara.innerText = feedback;
