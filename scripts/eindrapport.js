@@ -64,3 +64,17 @@ dictInzet = {
   droomt: `(naam) droomt vaak weg in de klas. Dan weet (hij) het antwoord niet of weet (hij) niet waar we bezig zijn. (Hij) moet in het vijfde leerjaar proberen meteen (zijn) focus bij de les te houden.`,
   nietgoed: `(naam) mist wat motivatie om zich in te zetten voor zijn schoolwerk. Van zodra het een beetje moeilijker wordt, haakt (hij) af. Dat is jammer, want hij zal nog een heel aantal jaren op school doorbrengen.`,
 }
+
+dictNetheid = {
+  netjes: `(Hij) werkt steeds netjes en nauwkeurig.\n`,
+  slordig: `In het vijfde leerjaar mag (hij) meer aandacht besteden aan netheid en orde. Dat zal (zijn) nieuwe juf of meester zeker waarderen.\n`,
+  leeg: ''
+}
+
+dictVragen = {
+  uitleggen: `Wanneer (hij) iets niet begrijpt, komt (hij) zelf uitleg vragen. Dat is een goede werkhouding. (Hij) vindt het ook fijn om andere leerlingen te helpen als ze een vraag hebben. Het is heel fijn dat ik soms een extra (meester) in de klas heb.\n`,
+  goed: `Wanneer (hij) iets niet begrijpt, komt (hij) zelf uitleg vragen. Dat is een goede werkhouding.\n`,
+  tesnel: `(naam) komt nogal snel hulp vragen wanneer (hij) iets niet begrijpt. Het is goed dat (hij) uitleg komt vragen als hij het echt niet kan, maar (hij) moet ook leren om eerst zelf een aantal manieren uit te proberen. (Hij) mag er meer op vertrouwen dat (hij) zelf met een goede oplossing kan komen.\n`,
+  sneller: `Wanneer (hij) iets niet begrijpt, stelt (hij) wel vragen, maar (hij) wacht er soms te lang mee. Van zodra (hij) een probleem ondervindt en het niet opgelost krijgt, mag (hij) hulp vragen. \n`,
+  geen: `Het blijft belangrijk om hulp te vragen wanneer iets niet lukt. Daar hoeft (naam) geen schrik voor te hebben: iedereen komt naar school om bij te leren. Dat kan je niet alleen.\n`
+}
