@@ -78,3 +78,13 @@ dictVragen = {
   sneller: `Wanneer (hij) iets niet begrijpt, stelt (hij) wel vragen, maar (hij) wacht er soms te lang mee. Van zodra (hij) een probleem ondervindt en het niet opgelost krijgt, mag (hij) hulp vragen. \n`,
   geen: `Het blijft belangrijk om hulp te vragen wanneer iets niet lukt. Daar hoeft (naam) geen schrik voor te hebben: iedereen komt naar school om bij te leren. Dat kan je niet alleen.\n`
 }
+
+dictResultaten = {
+  altijdgoed: `(Hij) legde dit schooljaar de ene knappe toets na de andere af en kon steeds met een schitterend rapport naar huis. Dat is ook nu niet anders.\n`,
+  goed: `(naam) behaalde zeer goede resultaten (ZELF IN TE VULLEN). Hier mag (hij) erg trots op zijn. (Hij) kan volgend schooljaar nog wat extra aandacht te schenken aan (ZELF IN TE VULLEN).\n`,
+  goedzorg: `(Naam) behaalde goede resultaten voor (ZELF IN TE VULLEN). Daar mag (hij) erg trots op zijn. (ZELF IN TE VULLEN) waren altijd wat moeilijker voor (hem). (Hij) zette zich daar wel steeds voor in samen met de zorgjuf of in een klein groepje bij (zijn) eigen juf. Hopelijk toont (hij) ook volgend schooljaar diezelfde inzet.\n`,
+  dictees: `Er staan een aantal prima resultaten op je rapport. Spelling heb je niet altijd even goed gestudeerd, sommige dictees gingen vlot, andere helemaal niet. Onthoud dat je volgend jaar zeer regelmatig moet studeren voor spelling en Frans.\n`,
+  ng_welover: `(Zijn) resultaten voor (ZELF IN TE VULLEN) waren goed. Voor (ZELF IN TE VULLEN) kon (hij) nog wat beter. (Zijn) resultaten voor (ZELF IN TE VULLEN) waren echt onvoldoende. Het is belangrijk om voldoende te studeren voor (ZELF IN TE VULLEN). Ook aandachtig opletten in de klas kan helpen.`,
+  ng_zitten: `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal (naam) het vierde leerjaar opnieuw doen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen. Ik hoop dat (hij) zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`,
+  '1B': `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal (naam) naar het vijfde leerjaar gaan, maar een aangepast traject volgen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen.  Deze aangepaste leerstof bereidt (hem) voor om het jaar nadien over te gaan naar een 1B in het middelbaar. Ik hoop dat (hij) zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`
+}
