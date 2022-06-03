@@ -93,3 +93,9 @@ dictDrukker = {
   drukker: `Ik merk dat het schooljaar voor (naam) lang genoeg geduurd heeft. (Hij) kreeg het de laatste tijd moeilijker om stil te zijn tussendoor en had vaker opmerkingen nodig dan ik van (hem) gewend ben.\n`,
   leeg:'' 
 }
+
+dictSlot = {
+  leuk: `(naam), het was een plezier om jou in de klas te hebben. Nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`,
+  gewoon: `(naam), nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`,
+  avi: `(naam), nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! Misschien behaal je dan in september wel je leesdiploma? In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`
+}
