@@ -88,3 +88,8 @@ dictResultaten = {
   ng_zitten: `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal (naam) het vierde leerjaar opnieuw doen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen. Ik hoop dat (hij) zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`,
   '1B': `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal (naam) naar het vijfde leerjaar gaan, maar een aangepast traject volgen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen.  Deze aangepaste leerstof bereidt (hem) voor om het jaar nadien over te gaan naar een 1B in het middelbaar. Ik hoop dat (hij) zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`
 }
+
+dictDrukker = {
+  drukker: `Ik merk dat het schooljaar voor (naam) lang genoeg geduurd heeft. (Hij) kreeg het de laatste tijd moeilijker om stil te zijn tussendoor en had vaker opmerkingen nodig dan ik van (hem) gewend ben.\n`,
+  leeg:'' 
+}
