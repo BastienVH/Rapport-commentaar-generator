@@ -40,6 +40,10 @@ textarea, select, input[type='text'] {
   border-radius: 6px;
 }
 
+fieldset {
+  margin: 4px 0;
+}
+
 /* style select boxes */
 select, option {
   font-family: 'Outfit', sans-serif;
