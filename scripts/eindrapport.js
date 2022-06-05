@@ -11,6 +11,7 @@ let aanwijzendVnwCap = "";
 let bezittVnw = "";
 let bezittVnwCap = "";
 let lijdVnw = "";
+let geslacht = "";
 
 function generateFeedback() {
   // set the gender and name of student
@@ -63,15 +64,15 @@ function generateFeedback() {
   const dictResultaten = {
     altijdgoed: `${aanwijzendVnwCap} legde dit schooljaar de ene knappe toets na de andere af en kon steeds met een schitterend rapport naar huis. Dat is ook nu niet anders.\n`,
     goed: `${displayName} behaalde zeer goede resultaten ${res1}. Hier mag ${aanwijzendVnw} erg trots op zijn. ${aanwijzendVnwCap} kan volgend schooljaar nog wat extra aandacht te schenken aan ${res2}.\n`,
-    goedzorg: `${displayName} behaalde goede resultaten voor ${res1}. Daar mag ${aanwijzendVnw} erg trots op zijn. ${res2} waren altijd wat moeilijker voor (hem). ${aanwijzendVnwCap} zette zich daar wel steeds voor in samen met de zorgjuf of in een klein groepje bij ${bezittVnw} eigen juf. Hopelijk toont ${aanwijzendVnw} ook volgend schooljaar diezelfde inzet.\n`,
+    goedzorg: `${displayName} behaalde goede resultaten voor ${res1}. Daar mag ${aanwijzendVnw} erg trots op zijn. ${res2} waren altijd wat moeilijker voor ${lijdVnw}. ${aanwijzendVnwCap} zette zich daar wel steeds voor in samen met de zorgjuf of in een klein groepje bij ${bezittVnw} eigen juf. Hopelijk toont ${aanwijzendVnw} ook volgend schooljaar diezelfde inzet.\n`,
     dictees: `Er staan een aantal prima resultaten op je rapport. Spelling heb je niet altijd even goed gestudeerd, sommige dictees gingen vlot, andere helemaal niet. Onthoud dat je volgend jaar zeer regelmatig moet studeren voor spelling en Frans.\n`,
     welover: `${bezittVnwCap} resultaten voor ${res1} waren goed. Voor ${res2} kon ${aanwijzendVnw} nog wat beter. ${bezittVnwCap} resultaten voor ${res3} waren echt onvoldoende. Het is belangrijk om voldoende te studeren voor ${res4}. Ook aandachtig opletten in de klas kan helpen.`,
-    zitten: `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} het vierde leerjaar opnieuw doen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`,
-    '1B': `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} naar het vijfde leerjaar gaan, maar een aangepast traject volgen. Dit geeft (hem) de kans om de belangrijkste leerstof goed te beheersen.  Deze aangepaste leerstof bereidt (hem) voor om het jaar nadien over te gaan naar een 1B in het middelbaar. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`
+    zitten: `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} het vierde leerjaar opnieuw doen. Dit geeft ${lijdVnw} de kans om de belangrijkste leerstof goed te beheersen. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`,
+    '1B': `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} naar het vijfde leerjaar gaan, maar een aangepast traject volgen. Dit geeft ${lijdVnw} de kans om de belangrijkste leerstof goed te beheersen.  Deze aangepaste leerstof bereidt ${lijdVnw} voor om het jaar nadien over te gaan naar een 1B in het middelbaar. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.\n`
   }
   
   const dictDrukker = {
-    drukker: `Ik merk dat het schooljaar voor ${displayName} lang genoeg geduurd heeft. ${aanwijzendVnwCap} kreeg het de laatste tijd moeilijker om stil te zijn tussendoor en had vaker opmerkingen nodig dan ik van (hem) gewend ben.\n`,
+    drukker: `Ik merk dat het schooljaar voor ${displayName} lang genoeg geduurd heeft. ${aanwijzendVnwCap} kreeg het de laatste tijd moeilijker om stil te zijn tussendoor en had vaker opmerkingen nodig dan ik van ${lijdVnw} gewend ben.\n`,
     leeg:'' 
   }
   
@@ -93,7 +94,7 @@ function generateFeedback() {
   if (pers2 == 'other2') {
     pers2 = document.querySelector('#pers2other').value;
   }
-  let persoonlijk = `${displayName} heeft laten zien dat ${aanwijzendVnw} een ${pers1} (jongen) is ${pers2}.\n`;
+  let persoonlijk = `${displayName} heeft laten zien dat ${aanwijzendVnw} een ${pers1} ${geslacht} is ${pers2}.\n`;
   feedback += persoonlijk;
 
   // get feedback for inzet
@@ -123,10 +124,12 @@ function setPronouns() {
     aanwijzendVnw = 'hij';
     bezittVnw = 'zijn';
     lijdVnw = 'hem';
+    geslacht = 'jongen';
   } else {
     aanwijzendVnw = 'zij';
     bezittVnw = 'haar';
     lijdVnw = 'haar';
+    geslacht = 'meid';
   }
   aanwijzendVnwCap = aanwijzendVnw.charAt(0).toUpperCase() + aanwijzendVnw.slice(1);
   bezittVnwCap = bezittVnw.charAt(0).toUpperCase() + bezittVnw.slice(1);
