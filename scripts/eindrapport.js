@@ -13,19 +13,13 @@ let bezittVnwCap = "";
 let lijdVnw = "";
 
 function generateFeedback() {
-  // set the gender of student
+  // set the gender and name of student
   setPronouns();
   const displayName = document.getElementById("name").value;
-  
-  let res1 = "abc";
-  let res2 = "def";
-  let res3, res4;
-  
-  // check if extra inputs need to be read
-  // if extra inputs need to be read: (for goed, goedzorg, welover)
-    // for every input that needs to be read
-    // save value of that input to variables
-  // add correct line from dictionary to feedback
+  // initialize variables for own input in resultaten
+  let res1, res2, res3, res4;
+
+  // store own input in above variables 
   const resultaten = returnSelection('resultaten');
   if (resultaten == 'goed') {
     res1 = document.getElementById('goed1').value;
@@ -40,6 +34,7 @@ function generateFeedback() {
     res4 = document.querySelector('#welover4').value;
   }
   
+  // dictionaries with feedback
   const dictInzet = {
     heelgoed: `${displayName} wilt graag een mooi resultaat behalen en zet zich daar enorm voor in.`,
     meestalgoed: `${displayName} wilt altijd een mooi resultaat. Daar zet ${aanwijzendVnw} zich meestal goed voor in. Af en toe laat ${aanwijzendVnw} ook ${bezittVnw} hoofd hangen of denkt ${aanwijzendVnw} dat het vanzelf wel zal lukken. ${aanwijzendVnwCap} moet proberen om er ook op die momenten voor te blijven gaan. `,
@@ -85,7 +80,10 @@ function generateFeedback() {
     gewoon: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`,
     avi: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! Misschien behaal je dan in september wel je leesdiploma? In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.\n`
   }
+
+  // Initial feedback, to be extended
   let feedback = 'Het vierde leerjaar zit er op. We hebben veel bijgeleerd en samen leuke herinneringen gemaakt. Bij de hoogtepunten van deze laatste periode horen zeker de uitstap naar de Zoo, onze zelfgemaakte machines en de sportdag.\n';
+  
   // get feedback for persoonlijk
   let pers1 = returnSelection('pers1');
   if (pers1 == 'other1') {
@@ -106,18 +104,10 @@ function generateFeedback() {
     inzet = dictInzet[inzet];
   };
   feedback += inzet;
-  // get feedback for netheid
-  feedback += dictNetheid[returnSelection('netheid')];
-  // get feedback for vragen
-  feedback += dictVragen[returnSelection('vragen')];
-  // get feedback for resultaten
 
-  feedback += dictResultaten[resultaten];
-  
-  // get feedback for eind drukker
-  feedback += dictDrukker[returnSelection('drukker')];
-  // get feedback for slot
-  feedback += dictSlot[returnSelection('slot')];
+  // get feedback for netheid, vragen, resultaten, drukker and slot
+
+  feedback += dictNetheid[returnSelection('netheid')] + dictVragen[returnSelection('vragen')] + dictResultaten[resultaten] + dictDrukker[returnSelection('drukker')] + dictSlot[returnSelection('slot')];
 
   // put feedback on page
   commentPara.value = feedback;
