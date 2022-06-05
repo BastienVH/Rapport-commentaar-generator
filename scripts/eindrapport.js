@@ -12,6 +12,7 @@ let bezittVnw = "";
 let bezittVnwCap = "";
 let lijdVnw = "";
 let geslacht = "";
+let leerkrachtGeslacht = "";
 
 function generateFeedback() {
   // set the gender and name of student
@@ -54,7 +55,7 @@ function generateFeedback() {
   }
   
   const dictVragen = {
-    uitleggen: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding. ${aanwijzendVnwCap} vindt het ook fijn om andere leerlingen te helpen als ze een vraag hebben. Het is heel fijn dat ik soms een extra (meester) in de klas heb.`,
+    uitleggen: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding. ${aanwijzendVnwCap} vindt het ook fijn om andere leerlingen te helpen als ze een vraag hebben. Het is heel fijn dat ik soms een extra ${leerkrachtGeslacht} in de klas heb.`,
     goed: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding.`,
     tesnel: `${displayName} komt nogal snel hulp vragen wanneer ${aanwijzendVnw} iets niet begrijpt. Het is goed dat ${aanwijzendVnw} uitleg komt vragen als hij het echt niet kan, maar ${aanwijzendVnw} moet ook leren om eerst zelf een aantal manieren uit te proberen. ${aanwijzendVnwCap} mag er meer op vertrouwen dat ${aanwijzendVnw} zelf met een goede oplossing kan komen.`,
     sneller: `Wanneer ${aanwijzendVnw} iets niet begrijpt, stelt ${aanwijzendVnw} wel vragen, maar ${aanwijzendVnw} wacht er soms te lang mee. Van zodra ${aanwijzendVnw} een probleem ondervindt en het niet opgelost krijgt, mag ${aanwijzendVnw} hulp vragen.`,
@@ -125,11 +126,13 @@ function setPronouns() {
     bezittVnw = 'zijn';
     lijdVnw = 'hem';
     geslacht = 'jongen';
+    leerkrachtGeslacht = 'meester';
   } else {
     aanwijzendVnw = 'zij';
     bezittVnw = 'haar';
     lijdVnw = 'haar';
     geslacht = 'meid';
+    leerkrachtGeslacht = 'juf';
   }
   aanwijzendVnwCap = aanwijzendVnw.charAt(0).toUpperCase() + aanwijzendVnw.slice(1);
   bezittVnwCap = bezittVnw.charAt(0).toUpperCase() + bezittVnw.slice(1);
