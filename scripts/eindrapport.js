@@ -128,7 +128,7 @@ function setPronouns() {
     geslacht = 'jongen';
     leerkrachtGeslacht = 'meester';
   } else {
-    aanwijzendVnw = 'zij';
+    aanwijzendVnw = 'ze';
     bezittVnw = 'haar';
     lijdVnw = 'haar';
     geslacht = 'meid';
