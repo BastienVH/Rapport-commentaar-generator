@@ -77,28 +77,11 @@ function generateFeedback() {
     leeg:'' 
   }
   
-  const dictSlot = {
-    leuk: `${displayName}, het was een plezier om jou in de klas te hebben. Nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.`,
-    gewoon: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.`,
-    avi: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! Misschien behaal je dan in september wel je leesdiploma? In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.`
-  }
 
   // Initial feedback, to be extended
-  let feedback = 'Het vierde leerjaar zit er op. We hebben veel bijgeleerd en samen leuke herinneringen gemaakt. Bij de hoogtepunten van deze laatste periode horen zeker de uitstap naar de Zoo, onze zelfgemaakte machines en de sportdag.';
+  let feedback = 'De tijd is weeral voorbijgevlogen. We hebben de voorbije maanden veel gedaan en bijgeleerd. We gingen op uitstap naar de brandweer, genoten van zelfgemaakte hapjes op onze kerstreceptie en we eindigden met de grote toetsenperiode.';
   
-  // get feedback for persoonlijk
-  let pers1 = returnSelection('pers1');
-  if (pers1 == 'other1') {
-    pers1 = document.querySelector('#pers1other').value;
-  }
-  let pers2 = returnSelection('pers2'); 
-  if (pers2 == 'other2') {
-    pers2 = document.querySelector('#pers2other').value;
-  }
-  let persoonlijk = `${displayName} heeft laten zien dat ${aanwijzendVnw} een ${pers1} ${geslacht} is ${pers2}.`;
-  feedback += '\n' + persoonlijk;
-
-  // get feedback for inzet
+    // get feedback for inzet
   let inzet = returnSelection('inzet');
   if (inzet == 'other') {
     inzet = document.querySelector('#inzet_other_text').value;
@@ -109,7 +92,11 @@ function generateFeedback() {
 
   // get feedback for netheid, vragen, resultaten, drukker and slot
 
-  feedback += '\n' + dictNetheid[returnSelection('netheid')] + '\n' + dictVragen[returnSelection('vragen')] + '\n' + dictResultaten[resultaten] + '\n' + dictDrukker[returnSelection('drukker')] + '\n' + dictSlot[returnSelection('slot')];
+  feedback += '\n' + dictNetheid[returnSelection('netheid')] + '\n' + dictVragen[returnSelection('vragen')] + '\n' + dictResultaten[resultaten] + '\n' + dictDrukker[returnSelection('drukker')] + '\n';
+
+  // Add static last sentence to feedback.
+
+  feedback+= "Ik kijk al uit naar de volgende periode. Maar eerst even genieten van een welverdiende vakantie.";
 
   // put feedback on page
   commentPara.value = feedback;
