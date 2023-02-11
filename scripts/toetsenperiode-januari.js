@@ -23,50 +23,87 @@ function generateFeedback() {
 
   // store own input in above variables 
   const resultaten = returnSelection('resultaten');
-  if (resultaten == 'goed') {
+  if (resultaten == 'goed_werkpuntje') {
     res1 = document.getElementById('goed1').value;
-    res2 = document.getElementById('goed2').value;
-  } else if (resultaten == 'goedzorg') {
-    res1 = document.querySelector('#goedzorg1').value;
-    res2 = document.querySelector('#goedzorg2').value;
-  } else if (resultaten == 'welover') {
-    res1 = document.querySelector('#welover2').value;
-    res2 = document.querySelector('#welover1').value;
-    res3 = document.querySelector('#welover3').value;
-    res4 = document.querySelector('#welover4').value;
+  } else if (resultaten == 'goed_veel_werk') {
+    res1 = document.querySelector('#goed_veel_werk1').value;
+    res2 = document.querySelector('#goed_veel_werk2').value;
+  } else if (resultaten == 'kan_beter') {
+    res1 = document.querySelector('#kan_beter1').value;
+    res2 = document.querySelector('#kan_beter2').value;
+  }
+
+  // Get value for text input samenwerken
+  let samenwerken_text;
+  let samenwerken = returnSelection('samenwerken');
+  if (samenwerken == 'kan_beter') {
+    samenwerken_text = document.querySelector('#samenwerken_text').value;
+  }
+
+  let tekst_vorig_rapport = document.querySelector('#tekst_vorig_rapport').value;
+  let terugblik_extra_text;
+  let terugblik = returnSelection('terugblik');
+  if (terugblik == 'verbetering') {
+    terugblik_extra_text = document.querySelector('#terugblik_extra_text').value;
   }
   
   // dictionaries with feedback 
   const dictVragen = {
-    uitleggen: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding. ${aanwijzendVnwCap} vindt het ook fijn om andere leerlingen te helpen als ze een vraag hebben. Het is heel fijn dat ik soms een extra ${leerkrachtGeslacht} in de klas heb.`,
-    goed: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding.`,
-    tesnel: `${displayName} komt nogal snel hulp vragen wanneer ${aanwijzendVnw} iets niet begrijpt. Het is goed dat ${aanwijzendVnw} uitleg komt vragen als hij het echt niet kan, maar ${aanwijzendVnw} moet ook leren om eerst zelf een aantal manieren uit te proberen. ${aanwijzendVnwCap} mag er meer op vertrouwen dat ${aanwijzendVnw} zelf met een goede oplossing kan komen.`,
-    sneller: `Wanneer ${aanwijzendVnw} iets niet begrijpt, stelt ${aanwijzendVnw} wel vragen, maar ${aanwijzendVnw} wacht er soms te lang mee. Van zodra ${aanwijzendVnw} een probleem ondervindt en het niet opgelost krijgt, mag ${aanwijzendVnw} hulp vragen.`,
-    geen: `Het blijft belangrijk om hulp te vragen wanneer iets niet lukt. Daar hoeft ${displayName} geen schrik voor te hebben: iedereen komt naar school om bij te leren. Dat kan je niet alleen.`
+    nooit: `Tijdens de toetsenperiode was er steeds tijd om vragen te stellen over de leerstof. ${displayName} deed dit eigenlijk nooit. Begreep ${aanwijzendVnw} altijd alles meteen, had ${aanwijzendVnw} geen zin om extra uitleg te krijgen of durfde ${aanwijzendVnw} geen vragen te stellen? Ik ben er altijd om ${lijdVnw} te helpen, dus ik hoop dat ${aanwijzendVnw} in de toekomst wel vragen komt stellen als dat nodig is.`,
+    soms: `Tijdens de toetsenperiode was er steeds tijd om vragen te stellen over de leerstof. ${displayName} deed dit af en toe. Ik ben er altijd om ${lijdVnw} te helpen, dus ${aanwijzendVnw} mag dit zeker vaker doen, als dat nodig is.`,
+    goed: `Tijdens de toetsenperiode was er steeds tijd om vragen te stellen over de leerstof. ${displayName} deed dit regelmatig en leerde op die manier veel bij. Knap!`,
+    te_veel: `Tijdens de toetsenperiode was er steeds tijd om vragen te stellen over de leerstof. ${displayName} deed dit regelmatig. Dat is op zich een goede leerhouding. Het is wel belangrijk dat ${displayName} enkel vragen komt stellen als ${aanwijzendVnw} iets niet begrijpt. Nu kwam ${aanwijzendVnw} ook vaak vragen stellen waarop ${aanwijzendVnw} eigenlijk het antwoord wel wist. Is ${aanwijzendVnw} onzeker of heeft ${aanwijzendVnw} nood aan extra bevestiging? ${displayName} mag echt wel vertrouwen in zichzelf, ${aanwijzendVnw} kan veel meer dan ${aanwijzendVnw} denkt.`
   }
   
   const dictResultaten = {
-    altijdgoed: `${aanwijzendVnwCap} legde dit schooljaar de ene knappe toets na de andere af en kon steeds met een schitterend rapport naar huis. Dat is ook nu niet anders.`,
-    goed: `${displayName} behaalde zeer goede resultaten ${res1}. Hier mag ${aanwijzendVnw} erg trots op zijn. ${aanwijzendVnwCap} kan volgend schooljaar nog wat extra aandacht te schenken aan ${res2}.`,
-    goedzorg: `${displayName} behaalde goede resultaten voor ${res1}. Daar mag ${aanwijzendVnw} erg trots op zijn. ${res2} waren altijd wat moeilijker voor ${lijdVnw}. ${aanwijzendVnwCap} zette zich daar wel steeds voor in samen met de zorgjuf of in een klein groepje bij ${bezittVnw} eigen juf. Hopelijk toont ${aanwijzendVnw} ook volgend schooljaar diezelfde inzet.`,
-    dictees: `Er staan een aantal prima resultaten op je rapport. Spelling heb je niet altijd even goed gestudeerd, sommige dictees gingen vlot, andere helemaal niet. Onthoud dat je volgend jaar zeer regelmatig moet studeren voor spelling en Frans.`,
-    welover: `${bezittVnwCap} resultaten voor ${res1} waren goed. Voor ${res2} kon ${aanwijzendVnw} nog wat beter. ${bezittVnwCap} resultaten voor ${res3} waren echt onvoldoende. Het is belangrijk om voldoende te studeren voor ${res4}. Ook aandachtig opletten in de klas kan helpen.`,
-    zitten: `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} het vierde leerjaar opnieuw doen. Dit geeft ${lijdVnw} de kans om de belangrijkste leerstof goed te beheersen. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.`,
-    '1B': `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} naar het vijfde leerjaar gaan, maar een aangepast traject volgen. Dit geeft ${lijdVnw} de kans om de belangrijkste leerstof goed te beheersen. Deze aangepaste leerstof bereidt ${lijdVnw} voor om het jaar nadien over te gaan naar een 1B in het middelbaar. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.`
+    heel_goed: `Er staan veel mooie resultaten op het rapport van ${displayName}. Ik ben trots op wat ${displayName} tot nu toe al allemaal heeft geleerd.`,
+    goed_werkpuntje: `Er staan veel mooie resultaten op het rapport van ${displayName}. ${aanwijzendVnwCap} heeft al veel geleerd dit schooljaar en daar mag ${aanwijzendVnw} best trots op zijn. De komende periode moet ${aanwijzendVnw} wat extra aandacht schenken aan ${res1}`,
+    goed_veel_werk: `Er staan veel mooie resultaten op het rapport van ${displayName}. ${aanwijzendVnwCap} heeft al veel geleerd dit schooljaar. Het is niet altijd makkelijk voor ${displayName}, maar ${aanwijzendVnw} zet zich enorm in. Hij mag dan ook terecht fier zijn op zijn resultaten voor bijvoorbeeld ${res1}. Ik hoop dat ${aanwijzendVnw} diezelfde inzet het hele jaar door kan volhouden. Samen oefenen we de komende periode nog extra op ${res2}.`,
+    kan_beter: `Er staan al enkele mooie resultaten op het rapport van ${displayName}. Zo mag ${aanwijzendVnw} erg trots zijn op bijvoorbeeld zijn punten voor ${res1}. Er is bij een aantal onderdelen ook nog ruimte om te groeien. Ik verwacht dat ${displayName} in de klas goed oplet, vragen stelt wanneer ${aanwijzendVnw} het niet begrijpt en thuis extra oefent. Als ${aanwijzendVnw} zowel op school als thuis extra aandacht schenkt aan ${res2} dan zien we op het volgende rapport hopelijk een verbetering.`
   }
   
+  const dictHerhalingsbundels = {
+    niet_gemaakt: `De herhalingsbundels die ${displayName} thuis moest maken ter voorbereiding, waren niet altijd in orde. Dit zijn natuurlijk gemiste oefenkansen.`,
+    slecht_verbeterd: `${displayName} werkte thuis goed in de herhalingsbundels om voor te bereiden voor de toetsen. In de klas kreeg ${aanwijzendVnw} de kans om de gemaakte oefeningen na te kijken. Dit deed ${aanwijzendVnw} niet altijd met evenveel zorg en aandacht. ${aanwijzendVnwCap} liet soms foutjes staan of verbeterde sommige oefeningen niet. Het is belangrijk dat ${aanwijzendVnw} volgende keer wel elke keer geconcentreerd nakijkt, zodat ${aanwijzendVnw} zelf weet waar ${aanwijzendVnw} nog extra op moet oefenen of vragen over moet stellen.`,
+    goed_nagekeken: `${displayName} werkte thuis goed in de herhalingsbundels om voor te bereiden voor de toetsen. In de klas keek ${aanwijzendVnw} ${bezittVnw} oefeningen ook aandachtig na. Deze studiehouding verdient een pluim.`,
+    extra_geoefend: `${displayName} werkte thuis goed in de herhalingsbundels om voor te bereiden voor de toetsen. In de klas keek ${aanwijzendVnw} ${bezittVnw} oefeningen ook aandachtig na. Daarnaast maakte ${displayName} ook regelmatig extra oefeningen in ${bezittVnw} huiswerkschrift. Dit toont veel inzet. Deze studiehouding verdient dan ook een grote pluim.`
+  }
+
+  const dictSamenwerken = {
+    goed: `Tijdens de les werken we regelmatig samen in duo's of kleine groepjes. Soms mogen ze zelf kiezen met wie ze samenwerken en soms zijn de groepjes al op voorhand vastgelegd. Dit samenwerken gaat voor ${displayName} al redelijk goed. Dat is fijn.`,
+    weinig_inbreng: `Tijdens de les werken we regelmatig samen in duo's of kleine groepjes. Soms mogen ze zelf kiezen met wie ze samenwerken en soms zijn de groepjes al op voorhand vastgelegd. Samenwerken per twee gaat voor ${displayName} erg goed. Als de groepen groter zijn, wordt het meer een uitdaging. ${displayName} werkt wel mee, maar geeft zelf weinig inbreng. Dat is jammer, want ook ${bezittVnw} mening is belangrijk. ${aanwijzendVnwCap} mag gerust ook zelf met ideeën komen.`,
+    kan_beter: `Tijdens de les werken we regelmatig samen in duo's of kleine groepjes. Soms mogen ze zelf kiezen met wie ze samenwerken en soms zijn de groepjes al op voorhand vastgelegd. Samenwerken per twee gaat voor ${displayName} meestal goed. Als de groepen groter zijn, wordt het meer een uitdaging. ${samenwerken_text}`
+  }
+
+  const dictAvi = {
+    zelfde: `Het leesniveau van ${displayName} is niet gestegen ten opzichte van het vorige rapport. Dat is jammer.  Het is noodzakelijk dat ${displayName} elke dag (luidop) leest zodat ${aanwijzendVnw} op het einde van dit schooljaar AVI 9 behaalt. De teksten die de leerlingen moeten verwerken voor de lessen taal en wereldoriëntatie worden steeds langer en moeilijker, vlot kunnen lezen is daarom enorm belangrijk.`,
+    al_2_keer_zelfde: `Het leesniveau van ${displayName} is niet gestegen ten opzichte van het vorige rapport. Ook toen was het niveau niet gestegen. Het is echt tijd om hier thuis extra op in te zetten, zodat ${displayName} hierin vooruit gaat. Als ${aanwijzendVnw} niet vlot genoeg leest, is het voor ${lijdVnw} ook veel moeilijker om te kunnen volgen tijdens andere lessen, zoals begrijpend lezen en wereldoriëntatie.`,
+    licht_gestegen: `Het leesniveau van ${displayName} is licht gestegen, dus ${aanwijzendVnw} kan beginnen oefenen op AVI 6 / 7 / 8. Misschien behaalt ${aanwijzendVnw} volgende keer ${bezittVnw} leesdiploma?`,
+    gestegen: `Het leesniveau van ${displayName} is gestegen, goed zo! ${aanwijzendVnwCap} kan beginnen oefenen op AVI 9. Misschien behaalt ${aanwijzendVnw} volgende keer ${bezittVnw} leesdiploma?`,
+    diploma: `${displayName} behaalde in januari ${bezittVnw} leesdiploma. Proficiat!`,
+    nvt: ``
+  }
+
+  const dictTerugblik = {
+    verbetering: `Op het vorige rapport schreef ik "${tekst_vorig_rapport}" Hier heeft ${aanwijzendVnw} al grote stappen in gezet. ${terugblik_extra_text}`,
+    beetje_beter: `Op het vorige rapport schreef ik "${tekst_vorig_rapport}" Ik zie dat ${displayName} hier probeert op te letten. ${aanwijzendVnwCap} mag hier ook de komende periode nog aandacht aan schenken.`,
+    zelfde_gebleven: `Op het vorige rapport schreef ik "${tekst_vorig_rapport}" Ik zie echter weinig verandering. Ik hoop dat ${displayName} hier de komende periode echt op zal letten.`
+  }
 
   // Initial feedback, to be extended
   let feedback = 'De tijd is weeral voorbijgevlogen. We hebben de voorbije maanden veel gedaan en bijgeleerd. We gingen op uitstap naar de brandweer, genoten van zelfgemaakte hapjes op onze kerstreceptie en we eindigden met de grote toetsenperiode.';
   
+  feedback += '\n' + dictHerhalingsbundels[returnSelection('herhalingsbundels')];
+  feedback += '\n' + dictVragen[returnSelection('vragen')];
+  feedback += '\n' + dictResultaten[returnSelection('resultaten')];
+  feedback += '\n' + dictSamenwerken[returnSelection('samenwerken')];
+  feedback += '\n' + dictAvi[returnSelection('avi')];
+  feedback += '\n' + dictTerugblik[returnSelection('terugblik')];
 
-  // get feedback for vragen, resultaten, drukker and slot
-
-  feedback += + '\n' + dictVragen[returnSelection('vragen')] + '\n' + dictResultaten[resultaten] + '\n';
 
   // Add static last sentence to feedback.
 
-  feedback+= "Ik kijk al uit naar de volgende periode. Maar eerst even genieten van een welverdiende vakantie.";
+  feedback+= '\n' + "Ik kijk al uit naar de volgende periode. Maar eerst even genieten van een welverdiende vakantie.";
 
   // put feedback on page
   commentPara.value = feedback;

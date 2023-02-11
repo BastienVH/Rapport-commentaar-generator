@@ -30,22 +30,47 @@
       <input type="radio" name="gender" id="meisje" value="meisje"><label for="meisje">meisje</label>
     </fieldset>
     <fieldset>
+      <legend>Herhalingsbundels</legend>
+      <input type="radio" name="herhalingsbundels" id="herhBundels_niet_gemaakt" value="niet_gemaakt"><label for="herhBundels_niet_gemaakt">niet altijd gemaakt</label><br>
+      <input type="radio" name="herhalingsbundels" id="herhBundels_slecht_verbeterd" value="slecht_verbeterd"><label for="herhBundels_slecht_verbeterd">wel gemaakt, slecht verbeterd</label><br>
+      <input type="radio" name="herhalingsbundels" id="herhBundels_goed_nagekeken" value="goed_nagekeken"><label for="herhBundels_goed_nagekeken">wel gemaakt, goed nagekeken</label><br>
+      <input type="radio" name="herhalingsbundels" id="herhBundels_extra_geoefend" value="extra_geoefend"><label for="herhBundels_extra_geoefend">wel gemaakt en extra geoefend</label><br>
+    </fieldset>
+    <fieldset>
       <legend>Vragen</legend>
-      <input type="radio" name="vragen" id="vragen_uitleggen" value="uitleggen"><label for="vragen_uitleggen">goed vragen stellen + uitleggen</label><br>
-      <input type="radio" name="vragen" id="vragen_goed" value="goed"><label for="vragen_goed">goed vragen stellen</label><br>
-      <input type="radio" name="vragen" id="vragen_tesnel" value="tesnel"><label for="vragen_tesnel">te snel vragen stellen</label><br>
-      <input type="radio" name="vragen" id="vragen_sneller" value="sneller"><label for="vragen_sneller">sneller vragen stellen</label><br>
-      <input type="radio" name="vragen" id="vragen_geen" value="geen"><label for="vragen_geen">stelt geen vragen</label><br>
+      <input type="radio" name="vragen" id="vragen_nooit" value="nooit"><label for="vragen_nooit">nooit</label><br>
+      <input type="radio" name="vragen" id="vragen_som" value="soms"><label for="vragen_soms">soms</label><br>
+      <input type="radio" name="vragen" id="vragen_goed" value="goed"><label for="vragen_goed">goed</label><br>
+      <input type="radio" name="vragen" id="vragen_te_veel" value="te_veel"><label for="vragen_te_veel">te veel</label><br>
     </fieldset>
     <fieldset>
       <legend>Resultaten</legend>
-      <input type="radio" name="resultaten" id="resultaten_altijdgoed" value="altijdgoed"><label for="resultaten_altijdgoed">altijd goed</label><br>
-      <input type="radio" name="resultaten" id="resultaten_goed" value="goed"><label for="resultaten_goed">goed: <input type="text" id="goed1"> is goed, aandacht voor <input type="text" id="goed2"></label><br>
-      <input type="radio" name="resultaten" id="resultaten_goedzorg" value="goedzorg"><label for="resultaten_goedzorg">goed, veel zorg; <input type="text" id="goedzorg1"> is goed, <input type="text" id="goedzorg2"> moeilijker</label><br>
-      <input type="radio" name="resultaten" id="resultaten_dictees" value="dictees"><label for="resultaten_dictees">slechte dictees</label><br>
-      <input type="radio" name="resultaten" id="resultaten_ng_welover" value="welover"><label for="resultaten_ng_welover">niet goed, wel over: <input type="text" name="welover1" id="welover1"> is goed, <input type="text" name="welover2" id="welover2"> kan beter; <input type="text" name="welover3" id="welover3"> is onvoldoende, studeren voor <input type="text" name="welover4" id="welover4"></label><br>
-      <input type="radio" name="resultaten" id="resultaten_ng_zitten" value="zitten"><label for="resultaten_ng_zitten">niet goed, blijven zitten</label><br>
-      <input type="radio" name="resultaten" id="resultaten_1B" value="1B"><label for="resultaten_1B">niet goed, 1B-traject</label><br>
+      <input type="radio" name="resultaten" id="resultaten_heel_goed" value="heel_goed"><label for="resultaten_heel_goed">heel goed</label><br>
+      <input type="radio" name="resultaten" id="resultaten_goed_werkpuntje" value="goed_werkpuntje"><label for="resultaten_goed_werkpuntje">goed, met werkpunt: <input type="text" id="goed1"></label><br>
+      <input type="radio" name="resultaten" id="resultaten_goed_veel_werk" value="goed_veel_werk"><label for="resultaten_goed_veel_werk">goed, vraagt veel werk: <input type="text" id="goed_veel_werk1"> is goed, samen oefenen voor <input type="text" id="goed_veel_werk2"></label><br>
+      <input type="radio" name="resultaten" id="resultaten_kan_beter" value="kan_beter"><label for="resultaten_kan_beter">kan beter: <input type="text" id="kan_beter1"> is goed, extra aandacht voor <input type="text" id="kan_beter2"></label><br>
+    </fieldset>
+    <fieldset>
+      <legend>Samenwerken</legend>
+      <input type="radio" name="samenwerken" id="samenwerken_goed" value="goed"><label for="samenwerken_goed">goed</label><br>
+      <input type="radio" name="samenwerken" id="samenwerken_weinig_inbreng" value="weinig_inbreng"><label for="samenwerken_weinig_inbreng">weinig inbreng</label><br>
+      <input type="radio" name="samenwerken" id="samenwerken_kan_beter" value="kan_beter"><label for="samenwerken_kan_beter">kan beter: invulvak: <input type="text" id="samenwerken_text"></label>
+    </fieldset>
+    <fieldset>
+      <legend>Avi</legend>
+      <input type="radio" name="avi" id="avi_zelfde" value="zelfde"><label for="avi_zelfde">zelfde</label><br>
+      <input type="radio" name="avi" id="avi_al_2_keer_zelfde" value="al_2_keer_zelfde"><label for="avi_al_2_keer_zelfde">al 2 keer hetzelfde</label><br>
+      <input type="radio" name="avi" id="avi_licht_gestegen" value="licht_gestegen"><label for="avi_licht_gestegen">licht gestegen</label><br>
+      <input type="radio" name="avi" id="avi_gestegen" value="gestegen"><label for="avi_gestegen">gestegen</label><br>
+      <input type="radio" name="avi" id="avi_diploma" value="diploma"><label for="avi_diploma">diploma</label><br>
+      <input type="radio" name="avi" id="avi_nvt" value="nvt"><label for="avi_nvt">nvt</label>
+    </fieldset>
+    <fieldset>
+      <legend>Terugblik vorige rapport</legend>
+      <p>Op het vorige rapport schreef ik: <input type="text" id="tekst_vorig_rapport"></p>
+      <input type="radio" name="terugblik" id="terugblik_verbetering" value="verbetering"><label for="terugblik_verbetering">verbetering: extra tekstvak: <input type="text" name="terugblik_extra_text" id="terugblik_extra_text"></label><br>
+      <input type="radio" name="terugblik" id="terugblik_beetje_beter" value="beetje_beter"><label for="terugblik_beetje_beter">beetje beter</label><br>
+      <input type="radio" name="terugblik" id="terugblik_zelfde_gebleven" value="zelfde_gebleven"><label for="terugblik_zelfde_gebleven">zelfde gebleven</label>
     </fieldset>
     <button type="button" id="generateButton">Genereer commentaar</button>
     <br>
