@@ -85,9 +85,9 @@ function generateFeedback() {
   }
 
   const dictTerugblik = {
-    verbetering: `Op het vorige rapport schreef ik "${tekst_vorig_rapport}" Hier heeft ${aanwijzendVnw} al grote stappen in gezet. ${terugblik_extra_text}`,
-    beetje_beter: `Op het vorige rapport schreef ik "${tekst_vorig_rapport}" Ik zie dat ${displayName} hier probeert op te letten. ${aanwijzendVnwCap} mag hier ook de komende periode nog aandacht aan schenken.`,
-    zelfde_gebleven: `Op het vorige rapport schreef ik "${tekst_vorig_rapport}" Ik zie echter weinig verandering. Ik hoop dat ${displayName} hier de komende periode echt op zal letten.`
+    verbetering: `Op het vorige rapport schreef ik ${tekst_vorig_rapport} Hier heeft ${aanwijzendVnw} al grote stappen in gezet. ${terugblik_extra_text}`,
+    beetje_beter: `Op het vorige rapport schreef ik ${tekst_vorig_rapport} Ik zie dat ${displayName} hier probeert op te letten. ${aanwijzendVnwCap} mag hier ook de komende periode nog aandacht aan schenken.`,
+    zelfde_gebleven: `Op het vorige rapport schreef ik ${tekst_vorig_rapport} Ik zie echter weinig verandering. Ik hoop dat ${displayName} hier de komende periode echt op zal letten.`
   }
 
   // Initial feedback, to be extended
