@@ -36,24 +36,7 @@ function generateFeedback() {
     res4 = document.querySelector('#welover4').value;
   }
   
-  // dictionaries with feedback
-  const dictInzet = {
-    heelgoed: `${displayName} wilt graag een mooi resultaat behalen en zet zich daar enorm voor in.`,
-    meestalgoed: `${displayName} wilt altijd een mooi resultaat. Daar zet ${aanwijzendVnw} zich meestal goed voor in. Af en toe laat ${aanwijzendVnw} ook ${bezittVnw} hoofd hangen of denkt ${aanwijzendVnw} dat het vanzelf wel zal lukken. ${aanwijzendVnwCap} moet proberen om er ook op die momenten voor te blijven gaan. `,
-    goedzwak: `${displayName} wilt graag een mooi resultaat. Daar zet ${aanwijzendVnw} zich ook enorm voor in, want niet alles gaat even gemakkelijk.`,
-    goedbabbelen: `${displayName} toonde toen dat ${aanwijzendVnw} hard kan werken wanneer ${aanwijzendVnw} dat wilt, al durfde ${aanwijzendVnw} ook wel eens babbelen met een buurtje.`,
-    wisselend: `De ene keer werkt ${displayName} knap mee en is ${aanwijzendVnw} met alles in orde, de andere keer laat ${aanwijzendVnw} ${bezittVnw} hoofd hangen en werkt ${aanwijzendVnw} niet mee. Een goede voorbereiding gebeurt in de klas maar ook in de studie en thuis.`,
-    speels: `${displayName} toonde vooral veel speelsheid. ${aanwijzendVnwCap} wilde in de klas veel plezier maken met ${bezittVnw} vrienden. Nauwkeurig werken en thuis studeren vond ${aanwijzendVnw} minder belangrijk. In een klein groepje bij de juf deed ${aanwijzendVnw} wel ${bezittVnw} best.`,
-    droomt: `${displayName} droomt vaak weg in de klas. Dan weet ${aanwijzendVnw} het antwoord niet of weet ${aanwijzendVnw} niet waar we bezig zijn. ${aanwijzendVnwCap} moet in het vijfde leerjaar proberen meteen ${bezittVnw} focus bij de les te houden.`,
-    nietgoed: `${displayName} mist wat motivatie om zich in te zetten voor zijn schoolwerk. Van zodra het een beetje moeilijker wordt, haakt ${aanwijzendVnw} af. Dat is jammer, want hij zal nog een heel aantal jaren op school doorbrengen.`,
-  }
-  
-  const dictNetheid = {
-    netjes: `${aanwijzendVnwCap} werkt steeds netjes en nauwkeurig.`,
-    slordig: `In het vijfde leerjaar mag ${aanwijzendVnw} meer aandacht besteden aan netheid en orde. Dat zal ${bezittVnw} nieuwe juf of meester zeker waarderen.`,
-    leeg: ''
-  }
-  
+  // dictionaries with feedback 
   const dictVragen = {
     uitleggen: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding. ${aanwijzendVnwCap} vindt het ook fijn om andere leerlingen te helpen als ze een vraag hebben. Het is heel fijn dat ik soms een extra ${leerkrachtGeslacht} in de klas heb.`,
     goed: `Wanneer ${aanwijzendVnw} iets niet begrijpt, komt ${aanwijzendVnw} zelf uitleg vragen. Dat is een goede werkhouding.`,
@@ -72,27 +55,14 @@ function generateFeedback() {
     '1B': `We hebben dit schooljaar hard gewerkt, maar niet alle basisleerstof is voldoende gekend. Volgend schooljaar zal ${displayName} naar het vijfde leerjaar gaan, maar een aangepast traject volgen. Dit geeft ${lijdVnw} de kans om de belangrijkste leerstof goed te beheersen. Deze aangepaste leerstof bereidt ${lijdVnw} voor om het jaar nadien over te gaan naar een 1B in het middelbaar. Ik hoop dat ${aanwijzendVnw} zich in september meteen vanaf de eerste dag volledig inzet om er een succesjaar van te maken.`
   }
   
-  const dictDrukker = {
-    drukker: `Ik merk dat het schooljaar voor ${displayName} lang genoeg geduurd heeft. ${aanwijzendVnwCap} kreeg het de laatste tijd moeilijker om stil te zijn tussendoor en had vaker opmerkingen nodig dan ik van ${lijdVnw} gewend ben.`,
-    leeg:'' 
-  }
-  
 
   // Initial feedback, to be extended
   let feedback = 'De tijd is weeral voorbijgevlogen. We hebben de voorbije maanden veel gedaan en bijgeleerd. We gingen op uitstap naar de brandweer, genoten van zelfgemaakte hapjes op onze kerstreceptie en we eindigden met de grote toetsenperiode.';
   
-    // get feedback for inzet
-  let inzet = returnSelection('inzet');
-  if (inzet == 'other') {
-    inzet = document.querySelector('#inzet_other_text').value;
-  } else {
-    inzet = dictInzet[inzet];
-  };
-  feedback += '\n' + inzet;
 
-  // get feedback for netheid, vragen, resultaten, drukker and slot
+  // get feedback for vragen, resultaten, drukker and slot
 
-  feedback += '\n' + dictNetheid[returnSelection('netheid')] + '\n' + dictVragen[returnSelection('vragen')] + '\n' + dictResultaten[resultaten] + '\n' + dictDrukker[returnSelection('drukker')] + '\n';
+  feedback += + '\n' + dictVragen[returnSelection('vragen')] + '\n' + dictResultaten[resultaten] + '\n';
 
   // Add static last sentence to feedback.
 
