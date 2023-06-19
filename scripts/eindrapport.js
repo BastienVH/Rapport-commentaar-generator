@@ -19,7 +19,7 @@ function generateFeedback() {
   setPronouns();
   const displayName = document.getElementById("name").value;
   // initialize variables for own input in resultaten
-  let res1, res2, res3, res4;
+  let res1, res2, res3, res4, oud_avi, nieuw_avi;
 
   // store own input in above variables 
   const resultaten = returnSelection('resultaten');
@@ -35,6 +35,14 @@ function generateFeedback() {
     res3 = document.querySelector('#welover3').value;
     res4 = document.querySelector('#welover4').value;
   }
+
+  // get feedback for slot
+  let slot = returnSelection('slot');
+  if (slot == 'avi') {
+    oud_avi = document.querySelector('#oud_avi').value;
+    nieuw_avi = document.querySelector('#nieuw_avi').value;
+  }
+
   
   // dictionaries with feedback
   const dictInzet = {
@@ -42,7 +50,7 @@ function generateFeedback() {
     meestalgoed: `${displayName} wilt altijd een mooi resultaat. Daar zet ${aanwijzendVnw} zich meestal goed voor in. Af en toe laat ${aanwijzendVnw} ook ${bezittVnw} hoofd hangen of denkt ${aanwijzendVnw} dat het vanzelf wel zal lukken. ${aanwijzendVnwCap} moet proberen om er ook op die momenten voor te blijven gaan. `,
     goedzwak: `${displayName} wilt graag een mooi resultaat. Daar zet ${aanwijzendVnw} zich ook enorm voor in, want niet alles gaat even gemakkelijk.`,
     goedbabbelen: `${displayName} toonde toen dat ${aanwijzendVnw} hard kan werken wanneer ${aanwijzendVnw} dat wilt, al durfde ${aanwijzendVnw} ook wel eens babbelen met een buurtje.`,
-    wisselend: `De ene keer werkt ${displayName} knap mee en is ${aanwijzendVnw} met alles in orde, de andere keer laat ${aanwijzendVnw} ${bezittVnw} hoofd hangen en werkt ${aanwijzendVnw} niet mee. Een goede voorbereiding gebeurt in de klas maar ook in de studie en thuis.`,
+    wisselend: `De ene keer werkt ${displayName} knap mee en is ${aanwijzendVnw} met alles in orde, de andere keer laat ${aanwijzendVnw} ${bezittVnw} hoofd hangen en werkt ${aanwijzendVnw} niet mee. Een goede voorbereiding gebeurt in de klas maar ook thuis.`,
     speels: `${displayName} toonde vooral veel speelsheid. ${aanwijzendVnwCap} wilde in de klas veel plezier maken met ${bezittVnw} vrienden. Nauwkeurig werken en thuis studeren vond ${aanwijzendVnw} minder belangrijk. In een klein groepje bij de juf deed ${aanwijzendVnw} wel ${bezittVnw} best.`,
     droomt: `${displayName} droomt vaak weg in de klas. Dan weet ${aanwijzendVnw} het antwoord niet of weet ${aanwijzendVnw} niet waar we bezig zijn. ${aanwijzendVnwCap} moet in het vijfde leerjaar proberen meteen ${bezittVnw} focus bij de les te houden.`,
     nietgoed: `${displayName} mist wat motivatie om zich in te zetten voor zijn schoolwerk. Van zodra het een beetje moeilijker wordt, haakt ${aanwijzendVnw} af. Dat is jammer, want hij zal nog een heel aantal jaren op school doorbrengen.`,
@@ -50,7 +58,7 @@ function generateFeedback() {
   
   const dictNetheid = {
     netjes: `${aanwijzendVnwCap} werkt steeds netjes en nauwkeurig.`,
-    slordig: `In het vijfde leerjaar mag ${aanwijzendVnw} meer aandacht besteden aan netheid en orde. Dat zal ${bezittVnw} nieuwe juf of meester zeker waarderen.`,
+    slordig: `In het vijfde leerjaar mag ${aanwijzendVnw} meer aandacht besteden aan netheid en orde. Dat zal ${bezittVnw} nieuwe juf zeker waarderen.`,
     leeg: ''
   }
   
@@ -78,13 +86,13 @@ function generateFeedback() {
   }
   
   const dictSlot = {
-    leuk: `${displayName}, het was een plezier om jou in de klas te hebben. Nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.`,
-    gewoon: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.`,
-    avi: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! Misschien behaal je dan in september wel je leesdiploma? In september mag je starten in het vijfde leerjaar bij een nieuwe juf of meester. Ik wens je veel succes.`
+    leuk: `${displayName}, het was een plezier om jou in de klas te hebben. Nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar. Ik wens je veel succes.`,
+    gewoon: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! In september mag je starten in het vijfde leerjaar. Ik wens je veel succes.`,
+    avi: `${displayName}, nu is het tijd voor een welverdiende vakantie. Gebruik de komende twee maanden om veel buiten te spelen en ga regelmatig een boek halen in de bib. Want boeken lezen is niet enkel belangrijk om vlot te leren lezen en je woordenschat uit te breiden, het is ook enorm leuk! Je behaalde in juni leesniveau ${oud_avi} en mag nu oefenen op leesniveau ${nieuw_avi}. In september mag je starten in het vijfde leerjaar. Ik wens je veel succes.`
   }
 
   // Initial feedback, to be extended
-  let feedback = 'Het vierde leerjaar zit er op. We hebben veel bijgeleerd en samen leuke herinneringen gemaakt. Bij de hoogtepunten van deze laatste periode horen zeker de uitstap naar de Zoo, onze zelfgemaakte machines en de sportdag.';
+  let feedback = 'Het vierde leerjaar zit er op. We hebben veel bijgeleerd en samen leuke herinneringen gemaakt. Ook in deze laatste periode zaten er heel wat hoogtepunten. Zo gingen we zelfstandig de straat op voor het voetgangersexamen en gingen we op uitstap naar toneel, de kinderboerderij en het Suske en Wiskemuseum. We genoten van een erg zonnige sportdag, verfrissende waterspelletjes en mogen erg trots zijn op onze zelf gebouwde machines.';
   
   // get feedback for persoonlijk
   let pers1 = returnSelection('pers1');
