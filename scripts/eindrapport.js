@@ -112,7 +112,7 @@ function generateFeedback() {
     inzet = document.querySelector('#inzet_other_text').value;
   } else {
     inzet = dictInzet[inzet];
-  };
+  }
   feedback += '\n' + inzet;
 
   // get feedback for netheid, vragen, resultaten, drukker and slot
