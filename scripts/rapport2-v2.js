@@ -130,7 +130,8 @@ const dictSlot = {
 }
 
   // Combine selected values to create a temporary string to output
-  result = displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
+  result = 'Op 1 september stapten 24 nieuwsgierige leerlingen onze klas binnen. We moesten even wennen aan de grotere klasgroep, maar iedereen begint stilaan zijn plekje te vinden. Het was dan ook erg fijn om deze eerste periode samen af te sluiten op bosklassen. Tijdens die 4 dagen leerden we over de burcht van Logne, wandelden we door weer en wind, speelden we leuke spellen en leerden we overleven in de wilde natuur. Er was ook tijd om samen te genieten van een voorleesverhaal en van een fantastische bonte avond. Wat hebben we daar allemaal enorm van genoten.\n\n';
+  result += displayName.value + " is een " + beschrijving1 + " en " + beschrijving2 + " " + gender + ".\n";
   // Check if something has been entered for eigenTekstje
   if (eigenTekstje) {
     result += eigenTekstje +"\n";
